@@ -1,16 +1,29 @@
-import search from '../../../assets/search1.png'
+import { FaSearch } from "react-icons/fa";
 
 const SearchMore = () => {
   return (
-    <div className="hero min-h-screen" style={{ backgroundImage: 'url(https://i.ibb.co/p2xCw8G/search1.png)' }}>
-      <div className="hero-overlay bg-opacity-60"></div>
-      <div className="hero-content text-center text-neutral-content">
-        <div className="max-w-md">
-          <h1 className="mb-5 text-5xl font-bold">Hello there</h1>
-          <p className="mb-5">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-          <button className="btn btn-primary">Get Started</button>
+    <div className="">
+      <div className="hero h-96" style={{ backgroundImage: 'url(https://i.ibb.co/p2xCw8G/search1.png)' }}>
+      </div>
+
+
+
+      <div className="text-center bg-violet-200  justify-center items-center">
+        <div className=" md:flex  justify-center " >
+
+          <button className="btn btn-outline btn-primary text-3xl w-36  my-8 text-center">Buy</button>
+          <button className="btn btn-outline btn-success text-3xl w-36 my-8  mx-8 text-center ">Rent</button>
+          <button className="btn btn-outline btn-accent text-3xl w-36 my-8 text-center ">Tresspass</button>
+        </div>
+        <div className="w-1/3 md:flex justify-center items-center mx-auto pb-8 ">
+
+          <input className="w-full rounded-md px-4 py-2" type="text" placeholder="search your house here .." />
+
+          <button className="flex justify-center items-center ml-6 text-2xl " > Search <FaSearch className="text-2xl ml-4" ></FaSearch></button>
         </div>
       </div>
+
+
     </div>
   );
 };
