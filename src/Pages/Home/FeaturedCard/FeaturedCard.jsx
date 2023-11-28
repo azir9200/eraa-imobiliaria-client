@@ -1,11 +1,9 @@
 import { Link } from "react-router-dom";
-import HouseDetails from "../../HouseDetails/HouseDetails";
 
 
 const FeaturedCard = ({ house }) => {
   const { _id, image, property_location, price_range, verification_status } = house;
 
-  const details = { _id, image, property_location, price_range, verification_status };
 
   return (
     <div className="" >
@@ -28,7 +26,7 @@ const FeaturedCard = ({ house }) => {
               </button>
             </Link>
           </div>
-          {<HouseDetails details={details} ></HouseDetails>}
+
         </div>
       </div>
     </div>
