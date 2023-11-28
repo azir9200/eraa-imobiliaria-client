@@ -5,6 +5,7 @@ import useHouses from "../../../Components/Hocks/AllHouses";
 const Featured = () => {
   const [allhouses] = useHouses();
 
+
   // const [allhouse, setHouses] = useState([]);
   // useEffect(() => {
   //   fetch('houses.json')

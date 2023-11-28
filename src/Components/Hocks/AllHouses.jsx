@@ -7,17 +7,14 @@ const useHouses = () => {
 
 
   useEffect(() => {
-    fetch('houses.json')
+    fetch('http://localhost:5000/allHouses')
       .then(res => res.json())
       .then(data => setAllHouses(data))
   }, [])
 
 
   return [allhouses]
-  // <div>
-  //   <h2> houses</h2>
-  //   <p> total houses {allhouses.length}  </p>
-  // </div>
+
 
 };
 

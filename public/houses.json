@@ -1,6 +1,6 @@
 [
   {
-    "id": 1,
+    "_id": "642c155b2c4774f05c36eeaa",
     "property_name": "Tranquil Haven",
     "property_title": "Serene House with Garden Views",
     "property_location": "Meadow Lane",
@@ -17,7 +17,7 @@
     "image": "https://i.ibb.co/7nRjF3m/housee1.png"
   },
   {
-    "id": 2,
+    "_id": "642c155b2c4774f05c36eeb9",
     "property_name": "Urban Loft",
     "property_title": "Chic Loft in the Heart of Downtown",
     "property_location": "City Center",
@@ -34,7 +34,7 @@
     "image": "https://i.ibb.co/wdZ5W9S/2150799687.jpg"
   },
   {
-    "id": 3,
+    "_id": "642c155b2c4774f05c36ee7c",
     "property_name": "Seaside Retreat",
     "property_title": "Idyllic Beachfront Home",
     "property_location": "Seaview Drive",
@@ -51,7 +51,7 @@
     "image": "https://i.ibb.co/wdZ5W9S/2150799687.jpghttps://i.ibb.co/JcJb8Nq/housee2.png"
   },
   {
-    "id": 4,
+    "_id": "642c155b2c4774f05c36ee88",
     "property_name": "Rustic Cabin",
     "property_title": "Cozy Cabin Retreat in the Woods",
     "property_location": "Woodland Trail",
@@ -68,7 +68,7 @@
     "image": "https://i.ibb.co/wJP1Q0P/housee3.png"
   },
   {
-    "id": 5,
+    "_id": "642c155b2c4774f05c36ee7a",
     "property_name": "Mountain View Estate",
     "property_title": "Luxurious Mountain Retreat",
     "property_location": "Highland Avenue",
@@ -85,7 +85,7 @@
     "image": "https://i.ibb.co/njDdQrC/2150799629.jpg"
   },
   {
-    "id": 6,
+    "_id": "642c155b2c4774f05c36ee8c",
     "property_name": "Lakefront Villa",
     "property_title": "Exquisite Villa by the Lake",
     "property_location": "Lakeview Terrace",
@@ -102,7 +102,7 @@
     "image": "https://i.ibb.co/ftfPj0q/house-isolated-field.jpg"
   },
   {
-    "id": 7,
+    "_id": "642c155b2c4774f05c36ee94",
     "property_name": "Country Farmhouse",
     "property_title": "Charming Farmhouse Retreat",
     "property_location": "Rural Road",
@@ -119,7 +119,7 @@
     "image": "https://i.ibb.co/wdZ5W9S/2150799687.jpg"
   },
   {
-    "id": 8,
+    "_id": "642c155b2c4774f05c36ee9e",
     "property_name": "Cityscape Apartment",
     "property_title": "Modern Apartment with City Views",
     "property_location": "Metropolis Street",
@@ -136,7 +136,7 @@
     "image": "https://i.ibb.co/wdZ5W9S/2150799687.jpghttps://i.ibb.co/JcJb8Nq/housee2.png"
   },
   {
-    "id": 9,
+    "_id": "642c155b2c4774f05c36eea6",
     "property_name": "Tranquil Haven",
     "property_title": "Serene House with Garden Views",
     "property_location": "Meadow Lane",
@@ -153,7 +153,7 @@
     "image": "https://i.ibb.co/wJP1Q0P/housee3.png"
   },
   {
-    "id": 10,
+    "_id": "642c155b2c4774f05c36eeaf",
     "property_name": "Urban Loft",
     "property_title": "Chic Loft in the Heart of Downtown",
     "property_location": "City Center",
@@ -170,7 +170,7 @@
     "image": "https://i.ibb.co/njDdQrC/2150799629.jpg"
   },
   {
-    "id": 11,
+    "_id": "642c155b2c4774f05c36ee89",
     "property_name": "Seaside Retreat",
     "property_title": "Idyllic Beachfront Home",
     "property_location": "Seaview Drive",
