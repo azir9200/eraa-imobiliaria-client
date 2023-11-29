@@ -3,39 +3,43 @@ import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import Swal from "sweetalert2";
 import UseAxiosSecure from "../../Components/Hocks/UseExiosecure/UseAxiosSecure";
+import useWishlist from "../../Components/Hocks/useWishlist/useWishlist";
 
 
 const HouseDetails = () => {
-
   const houses = useLoaderData();
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
   const axiosSecure = UseAxiosSecure()
+  const [, refetch] = useWishlist();
 
   const { _id, image, property_name, property_title, property_location, price_range, sq_ft, bedrooms, bathrooms, swimming_pool, agent_name, verification_status, description, agent_image } = houses;
 
-  const handleAddtoWishlist = houses => {
+  const handleAddtoWishlist = () => {
     if (user && user.email) {
-      console.log(user.email, houses);
-      const wishlist = {
-        menuId: _id,
+
+      //sending item to database
+      const wishList = {
+        houseId: _id,
         email: user.email,
-        name,
+        name: user.name,
         image,
         price_range,
       }
-      axiosSecure.post('/wishList', wishlist)
+      axiosSecure.post('/wishList', wishList)
         .then(res => {
           console.log(res.data)
           if (res.data.insertedId) {
             Swal.fire({
               position: "top-end",
-              icon: "Added",
-              title: "This House added to your Wishlist !",
+              icon: "success",
+              title: "success, added to Wishlist !",
               showConfirmButton: false,
               timer: 1500
             });
+            //refetch the wish list
+            refetch();
           }
         })
     }
@@ -50,7 +54,7 @@ const HouseDetails = () => {
         confirmButtonText: "Yes, LOGIN!"
       }).then((result) => {
         if (result.isConfirmed) {
-          navigate('/login', { state: { from: location } })
+          navigate('/userLogin', { state: { from: location } })
         }
       });
     }
@@ -87,7 +91,7 @@ const HouseDetails = () => {
           <p className="font-semibold" >Description:  {description} </p>
 
           <div className="flex gap-3 " >
-            <button onClick={() => handleAddtoWishlist(houses)} className="btn btn-outline btn-primary">Add to Wishlist</button>
+            <button onClick={handleAddtoWishlist} className="btn btn-outline btn-primary">Add to Wishlist</button>
             {/* <button className="btn btn-outline btn-secondary">Secondary</button> */}
             <button className="btn btn-outline btn-accent">Review</button>
           </div>

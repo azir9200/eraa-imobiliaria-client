@@ -12,6 +12,7 @@ const UserLogin = () => {
   const location = useLocation();
 
   const from = location.state?.from?.pathname || "/";
+
   console.log('state in the AZIR location', location.state)
   useEffect(() => {
     loadCaptchaEnginge(6);
@@ -28,7 +29,7 @@ const UserLogin = () => {
         const user = result.user;
         console.log(user);
         Swal.fire({
-          title: "  Login is Successfully ! ",
+          title: 'Success!',
           showClass: {
             popup: ` animate__animated animate__fadeInUp animate__faster  `
           },

@@ -8,7 +8,7 @@ import useWishlist from "../../../Components/Hocks/useWishlist/useWishlist";
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
-  const [wishlist] = useWishlist()
+  const [wishList] = useWishlist()
 
   const handleLogout = () => {
     logOut()
@@ -25,7 +25,7 @@ const Navbar = () => {
       <Link to='/'>
         <button className="btn" >
           <FaHeart></FaHeart>
-          <div className="badge badge-secondary" >+{wishlist.length}</div>
+          <div className="badge badge-secondary" >+{wishList.length}</div>
         </button>
       </Link>
     </li>
