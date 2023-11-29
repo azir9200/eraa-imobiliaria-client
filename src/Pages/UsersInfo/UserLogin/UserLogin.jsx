@@ -11,8 +11,8 @@ const UserLogin = () => {
   const navigate = useNavigate();
   const location = useLocation();
 
-  const from = location.state?.from?.pathname || "'/";
-
+  const from = location.state?.from?.pathname || "/";
+  console.log('state in the AZIR location', location.state)
   useEffect(() => {
     loadCaptchaEnginge(6);
   }, [])

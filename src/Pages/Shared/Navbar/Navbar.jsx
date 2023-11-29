@@ -2,10 +2,13 @@ import { Link } from "react-router-dom";
 import logo from '../../../assets/logo.png'
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProviders";
+import { FaHeart } from "react-icons/fa";
+import useWishlist from "../../../Components/Hocks/useWishlist/useWishlist";
 
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
+  const [wishlist] = useWishlist()
 
   const handleLogout = () => {
     logOut()
@@ -18,6 +21,14 @@ const Navbar = () => {
     <li><Link to='/' >Home</Link> </li>
     <li><Link to='/allProperties' >All Properties</Link> </li>
     <li><Link to='/houseDetails' >House details</Link></li>
+    <li>
+      <Link to='/'>
+        <button className="btn" >
+          <FaHeart></FaHeart>
+          <div className="badge badge-secondary" >+{wishlist.length}</div>
+        </button>
+      </Link>
+    </li>
 
     {
       user ? <>
@@ -27,7 +38,6 @@ const Navbar = () => {
         <li><Link to='/userLogin'>Login</Link></li>
       </>
     }
-
   </>
 
   return (
