@@ -22,7 +22,7 @@ const Navbar = () => {
     <li><Link to='/allProperties' >All Properties</Link> </li>
     <li><Link to='/houseDetails' >House details</Link></li>
     <li>
-      <Link to='/'>
+      <Link to='/dashBoard/wishList'>
         <button className="btn" >
           <FaHeart></FaHeart>
           <div className="badge badge-secondary" >+{wishList.length}</div>

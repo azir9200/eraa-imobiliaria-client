@@ -7,6 +7,8 @@ import UserLogin from "../Pages/UsersInfo/UserLogin/UserLogin";
 import UserSignup from "../Pages/UsersInfo/UserSignup/UserSignup";
 import Secret from "../Pages/Shared/Secret/Secret";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
+import DashBoard from "../Layout/DashBoard/DashBoard";
+import WishList from "../Pages/Dashboard/WishList/WishList";
 
 const router = createBrowserRouter([
   {
@@ -41,6 +43,17 @@ const router = createBrowserRouter([
       }
     ]
   },
+  {
+    path: 'dashBoard',
+    element: <DashBoard></DashBoard>,
+    children: [
+      {
+        path: 'wishList',
+        element: <WishList></WishList>
+
+      }
+    ]
+  }
 ]);
 
 
