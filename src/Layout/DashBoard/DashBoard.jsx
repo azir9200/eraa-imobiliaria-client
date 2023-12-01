@@ -1,4 +1,4 @@
-import { FaAddressBook, FaHome, FaPeriscope, FaRegQuestionCircle, FaRobot, FaShoppingCart } from "react-icons/fa";
+import { FaAddressBook, FaHome, FaRobot, FaShoppingCart } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
 
 
@@ -7,20 +7,21 @@ const DashBoard = () => {
 
     <div className="flex">
       <div className="w-64 min-h-screen bg-amber-300" >
-        <ul className="menu p-6 " >
+        <ul className="menu p-10 " >
           <li><NavLink to="/dashBoard/wishList">
             <FaRobot></FaRobot>
-            Agent Profile</NavLink> </li>
-          <li><NavLink to="/dashBoard/wishList"> Add Property</NavLink> </li>
+            My Profile</NavLink> </li>
+
+          <li><NavLink to="/myWishList"> Wish List</NavLink> </li>
+
           <li><NavLink to="/dashBoard/wishList">
             <FaShoppingCart></FaShoppingCart>
-            My Added Property</NavLink> </li>
+            Property Bought </NavLink> </li>
 
           <li><NavLink to="/dashBoard/wishList">
             <FaAddressBook></FaAddressBook>
-            My Sold Properties</NavLink> </li>
-          <li><NavLink to="/dashBoard/wishList"> Requested Properties</NavLink> </li>
-          <li><div className="divider" ></div> </li>
+            My Review</NavLink> </li>
+
 
           <li><NavLink to='/'><FaHome></FaHome> Home </NavLink> </li>
         </ul>

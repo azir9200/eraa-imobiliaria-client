@@ -24,8 +24,8 @@ const HouseDetails = () => {
         houseId: _id,
         email: user.email,
         name: user.name,
-        image,
-        price_range,
+        image, property_name, property_title, property_location, price_range, sq_ft, bedrooms, bathrooms, swimming_pool, agent_name, verification_status, description, agent_image
+
       }
       axiosSecure.post('/wishList', wishList)
         .then(res => {

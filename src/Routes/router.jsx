@@ -9,6 +9,7 @@ import Secret from "../Pages/Shared/Secret/Secret";
 import PrivateRoute from "./PrivateRoute/PrivateRoute";
 import DashBoard from "../Layout/DashBoard/DashBoard";
 import WishList from "../Pages/Dashboard/WishList/WishList";
+// import MyWishList from "../Pages/Dashboard/MyWishList/MyWishList";
 
 const router = createBrowserRouter([
   {
@@ -51,7 +52,9 @@ const router = createBrowserRouter([
         path: 'wishList',
         element: <WishList></WishList>
 
-      }
+      },
+
+
     ]
   }
 ]);
