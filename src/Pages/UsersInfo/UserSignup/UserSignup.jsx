@@ -3,8 +3,11 @@ import { useForm } from "react-hook-form";
 import { Link, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProviders";
 import Swal from "sweetalert2";
+import UseAxiosOpen from "../../../Components/UseAxiosOpen/UseAxiosOpen";
+import SocialLogin from "../../../Components/SocialLogin/SocialLogin";
 
 const UserSignup = () => {
+  const axiosOpen = UseAxiosOpen();
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const { createUser, updateUserInfo } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -17,13 +20,27 @@ const UserSignup = () => {
         console.log(userSignup);
         updateUserInfo(data.name, data.photoURL)
           .then(() => {
-            console.log('user profile info updated !')
-            reset();
-            Swal.fire({
-              title: "Congratulation !",
-              text: "User created Successfully.",
-            });
-            navigate('/');
+            //create user entry in the database,
+            const userInfo = {
+              name: data.name,
+              email: data.email
+            }
+
+            axiosOpen.post('/users', userInfo)
+              .then(res => {
+                if (res.data.insertedId) {
+                  console.log('user added to the database')
+                  reset();
+                  Swal.fire({
+                    position: "top-end",
+                    icon: "success",
+                    title: "Your work has been saved",
+                    showConfirmButton: false,
+                    timer: 1500
+                  });
+                  navigate('/');
+                }
+              })
           })
           .catch(error => console.log(error))
       })
@@ -91,8 +108,11 @@ const UserSignup = () => {
                 <input className="btn btn-primary  text-2xl  " type="submit" value="Signup" />
               </div>
             </form>
-            <Link to="/userLogin" > <div className="text-center text-lg" >Already have an account  ?  <span className="font-bold text-amber-800" >Login</span> </div>  </Link>
+            <p className="px-10" ><Link to="/userLogin" > <div className="text-center text-lg" >Already have an account  ?  <span className="font-bold text-amber-800" >Login</span></div></Link>
+            </p>
+            <SocialLogin></SocialLogin>
           </div>
+
         </div >
       </div >
     </>
