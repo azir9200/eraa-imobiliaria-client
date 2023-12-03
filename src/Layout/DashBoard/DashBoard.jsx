@@ -1,12 +1,11 @@
 import { FaAddressBook, FaEnvelope, FaFacebookMessenger, FaHome, FaRobot, FaShoppingCart } from "react-icons/fa";
 import { NavLink, Outlet } from "react-router-dom";
-import useWishlist from "../../Components/Hocks/useWishlist/useWishlist";
+
 import useAdmin from "../../Components/Hocks/UseAdmin/UseAdmin";
 
 
 const DashBoard = () => {
-  const [wishList] = useWishlist();
-  // todo: admin create
+
   const [isAdmin] = useAdmin();
   return (
 
@@ -15,37 +14,36 @@ const DashBoard = () => {
         <ul className="menu  " >
           {
             isAdmin ? <>
-              <li><NavLink to="/dashBoard/wishList">
+              <li><NavLink to="/dashBoard/adminProfile">
                 <FaRobot></FaRobot>
                 Admin Profile</NavLink> </li>
 
-              <li><NavLink to="/myWishList">  <FaShoppingCart></FaShoppingCart>
+              <li><NavLink to="dashBoard/manageProperty">  <FaShoppingCart></FaShoppingCart>
                 Manage Property</NavLink> </li>
 
-              <li><NavLink to="/dashBoard/users">
+              <li><NavLink to="/dashBoard/manageUsers">
                 Manage Users  </NavLink> </li>
 
-              <li><NavLink to="/myWishList">  <FaShoppingCart></FaShoppingCart>
-                Manage Property</NavLink> </li>
 
-              <li><NavLink to="/dashBoard/wishList">
+              <li><NavLink to="/dashBoard/manageReview">
                 <FaAddressBook></FaAddressBook>
                 Manage Reviews</NavLink> </li>
 
 
             </> :
               <>
-                <li><NavLink to="/dashBoard/wishList">
+                {/* normal dashboard */}
+                <li><NavLink to="/dashBoard/myProfile">
                   <FaRobot></FaRobot>
-                  My Profile</NavLink> </li>
+                  Profile</NavLink> </li>
 
-                <li><NavLink to="/myWishList">  <FaShoppingCart></FaShoppingCart>
+                <li><NavLink to="/dashBoard/wishList"> <FaShoppingCart></FaShoppingCart>
                   My Wish List </NavLink> </li>
 
-                <li><NavLink to="/dashBoard/wishList">
+                <li><NavLink to="/dashBoard/propertyBought">
                   Property Bought </NavLink> </li>
 
-                <li><NavLink to="/dashBoard/wishList">
+                <li><NavLink to="/dashBoard/myReview">
                   <FaAddressBook></FaAddressBook>
                   My Review</NavLink> </li>
               </>
@@ -53,22 +51,24 @@ const DashBoard = () => {
 
 
           <div className="divider p-12" > </div>
-
-          <li><NavLink to="/dashBoard/wishList">
+          {/* agent  */}
+          <li><NavLink to="/dashBoard/agentProfile">
             <FaRobot></FaRobot>
-            My Profile</NavLink> </li>
+            Agent  Profile</NavLink> </li>
 
-          <li><NavLink to="/myWishList">  <FaShoppingCart></FaShoppingCart>
-            My Wish List :{wishList.length} Wish List</NavLink> </li>
+          <li><NavLink to="/dashBoard/addProperty">  <FaShoppingCart></FaShoppingCart>
+            Add Property</NavLink> </li>
 
-          <li><NavLink to="/dashBoard/wishList">
-            Property Bought </NavLink> </li>
+          <li><NavLink to="/dashBoard/myAddedProperty">
+            My Added Properties  </NavLink> </li>
 
-          <li><NavLink to="/myWishList"> <FaAddressBook></FaAddressBook>
-            My Review</NavLink> </li>
+          <li><NavLink to="/dashBoard/soldProperty"> <FaAddressBook></FaAddressBook>
+            My Sold Properties</NavLink> </li>
 
+          <li><NavLink to="/dashBoard/requestedProperty"> <FaAddressBook></FaAddressBook>
+            Requested Properties</NavLink> </li>
 
-
+          {/* regula */}
           <div className="divider p-12" > </div>
 
           <li><NavLink to='/'><FaHome></FaHome> Home </NavLink> </li>

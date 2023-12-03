@@ -1,13 +1,15 @@
-import { useContext } from "react";
+import { useContext, useState } from "react";
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import Swal from "sweetalert2";
 import UseAxiosSecure from "../../Components/Hocks/UseExiosecure/UseAxiosSecure";
 import useWishlist from "../../Components/Hocks/useWishlist/useWishlist";
+import { Modal } from 'daisyui';
 
 
 const HouseDetails = () => {
   const houses = useLoaderData();
+  const [isOpen, setIsOpen] = useState(false);
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -92,12 +94,31 @@ const HouseDetails = () => {
 
           <div className="flex gap-3 " >
             <button onClick={handleAddtoWishlist} className="btn btn-outline btn-primary">Add to Wishlist</button>
-            {/* <button className="btn btn-outline btn-secondary">Secondary</button> */}
+
+            {/* modal  is here */}
+            {/* <div className="p-8">
+              <button onClick={() => setIsOpen(true)} className="btn btn-primary">
+                Open Modal
+              </button>
+
+              <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
+                <div className="p-4">
+                  <h1 className="text-lg font-bold mb-4">DaisyUI Modal</h1>
+                  <p>This is the content of the modal.</p>
+                  <button onClick={() => setIsOpen(false)} className="mt-4 btn btn-primary">
+                    Close
+                  </button>
+                </div>
+              </Modal>
+            </div> */}
+
+
             <button className="btn btn-outline btn-accent">Review</button>
           </div>
         </div>
       </div>
       <div>
+
         <h2 className="text-4xl text-center mt-8" >Reviews from our customer.</h2>
       </div>
     </div>

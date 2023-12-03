@@ -1,4 +1,5 @@
 import { FaSearch } from "react-icons/fa";
+import { Link } from "react-router-dom";
 
 const SearchMore = () => {
   return (
@@ -11,9 +12,13 @@ const SearchMore = () => {
       <div className="text-center bg-violet-200  justify-center items-center">
         <div className=" md:flex  justify-center " >
 
-          <button className="btn btn-outline btn-primary text-3xl w-36  my-8 text-center">Buy</button>
-          <button className="btn btn-outline btn-success text-3xl w-36 my-8  mx-8 text-center ">Rent</button>
-          <button className="btn btn-outline btn-accent text-3xl w-36 my-8 text-center ">Tresspass</button>
+          <Link to='/allProperties' >
+            <button className="btn btn-outline btn-accent text-3xl w-36 my-8 text-center   ">BUY</button></Link>
+
+          <Link to='/allProperties' >    <button className="btn btn-outline btn-success text-3xl w-36 my-8  mx-8 text-center ">RENT</button></Link>
+
+          <Link to='/allProperties' >
+            <button className="btn btn-outline btn-accent text-3xl w-36 my-8 text-center   ">Tresspass</button></Link>
         </div>
         <div className="w-1/3 md:flex justify-center items-center mx-auto pb-8 ">
 

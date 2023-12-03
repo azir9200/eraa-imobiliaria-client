@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom';
 import owner1 from '../../../assets/owner1.png'
 
 const Advertise = () => {
@@ -12,8 +13,16 @@ const Advertise = () => {
         <hr />
         <div className='ml-8  mt-8 '  >
           <p className='text-lg mb-6 ' >To sell or rent your property, make an evaluation or create an advertisement in just a few minutes.</p>
-          <div className='  md:flex' >  <button className="btn btn-outline btn-primary">FREE ADVERTISE</button>
-            <button className="btn btn-outline btn-secondary ml-4">EVALUATE PROPERTY</button></div>
+          <div className='  md:flex' >
+
+
+            <Link to='/allProperties' >
+              <button className="btn btn-outline btn-primary">FREE ADVERTISE</button></Link>
+
+            <Link to='/allProperties' >
+              <button className="btn btn-outline btn-secondary ml-4">EVALUATE PROPERTY</button></Link>
+
+          </div>
         </div>
       </div>
     </div>
