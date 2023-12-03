@@ -1,6 +1,7 @@
 import Swal from "sweetalert2";
 import UseAxiosSecure from "../../../Components/Hocks/UseExiosecure/UseAxiosSecure";
 import useWishlist from "../../../Components/Hocks/useWishlist/useWishlist";
+import { Link } from "react-router-dom";
 
 
 const MyWishListDetails = ({ details }) => {
@@ -66,8 +67,11 @@ const MyWishListDetails = ({ details }) => {
           <p className="font-semibold" >Description:  {description} </p>
 
           <div className="flex gap-3 " >
-            <button className="btn btn-outline btn-primary">Make an Offer</button>
-            {/* <button className="btn btn-outline btn-secondary">Secondary</button> */}
+            <Link to='/makeOffer' >
+              <button className="btn btn-outline btn-primary">Make an Offer</button>
+            </Link>
+
+
             <button onClick={() => handelRemoveWishList(_id)} className="btn btn-outline btn-warning">Remove</button>
           </div>
         </div>

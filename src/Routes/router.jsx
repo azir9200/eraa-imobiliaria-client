@@ -19,6 +19,7 @@ import RequestedProperty from "../Layout/Dpages/AgentPage/RequestedProperty/Requ
 import PropertyBought from "../Layout/Dpages/NormalUsers/PropertyBought/PropertyBought";
 import MyReview from "../Layout/Dpages/NormalUsers/MyReview/MyReview";
 import ModalReview from "../Pages/Home/ModalReview/ModalReview";
+import MakeOffer from "../Pages/Dashboard/MakeOffer/MakeOffer";
 
 
 
@@ -54,6 +55,10 @@ const router = createBrowserRouter([
         path: '/houseDetails/:id',
         element: <HouseDetails></HouseDetails>,
         loader: ({ params }) => fetch(`http://localhost:5000/allHouse/${params.id}`)
+      },
+      {
+        path: '/makeOffer',
+        element: <MakeOffer></MakeOffer>
       },
       {
         path: 'modalReview',
