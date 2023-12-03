@@ -20,6 +20,7 @@ import PropertyBought from "../Layout/Dpages/NormalUsers/PropertyBought/Property
 import MyReview from "../Layout/Dpages/NormalUsers/MyReview/MyReview";
 import ModalReview from "../Pages/Home/ModalReview/ModalReview";
 import MakeOffer from "../Pages/Dashboard/MakeOffer/MakeOffer";
+import ErrorPage from "../Components/ErrorPage/ErrorPage";
 
 
 
@@ -29,6 +30,7 @@ const router = createBrowserRouter([
   {
     path: "/",
     element: <Main></Main>,
+    errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
         path: '/',
