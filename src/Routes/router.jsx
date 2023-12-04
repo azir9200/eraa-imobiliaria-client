@@ -99,7 +99,7 @@ const router = createBrowserRouter([
       //todo : make admin roote
       {
         path: 'addProperty',
-        element: <AddProperty> <AddProperty></AddProperty> </AddProperty>
+        element: <AddProperty></AddProperty>
       },
       // todo make users admin route
       {
