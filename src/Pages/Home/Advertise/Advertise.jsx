@@ -3,8 +3,8 @@ import owner1 from '../../../assets/owner1.png'
 
 const Advertise = () => {
   return (
-    <div className=' md:flex  ' >
-      <img src={owner1} className='w-96' alt="owner1" />
+    <div className=' md:flex  bg-sky-200 ' >
+      <img src={owner1} className='w-96  ' alt="owner1" />
       <div >
         <div className='mt-8 ml-8  bg-slate-200 '>
           <h2 className='text-3xl font-bold ' > Are You a Owner?        </h2>

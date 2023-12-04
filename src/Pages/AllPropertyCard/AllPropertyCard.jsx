@@ -7,12 +7,12 @@ const AllPropertyCard = ({ houses }) => {
 
   return (
     <div>
-      <div className="" >
-        <div className="card max-w-screen-lg  shadow-xl">
-          <figure className="">
-            <img src={image} alt="image" className="rounded  max-w-full w-auto h-96 " />
-            <p className="absolute bottom-12 left-4 p-2 mr-4 bg-slate-500 text-xl rounded text-white">Price: {price_range}</p>
-          </figure>
+      <div className="m-8" >
+        <div className="  shadow-xl">
+          <div className="relative overflow-hidden aspect-w-1 aspect-h-1 ">
+            <img src={image} alt="image" className="rounded object-cover sm:w-56 md:w-96 lg:w-full h-96 " />
+            <p className="absolute bottom-2 left-2 p-2 mr-2 bg-slate-500 text-xl rounded text-white">Price: {price_range}</p>
+          </div>
 
           <div className=" flex justify-between items-center">
             <div className="ml-4" >

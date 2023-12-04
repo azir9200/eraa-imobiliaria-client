@@ -7,7 +7,7 @@ import Review from "../Review/Review";
 const Reviews = () => {
   const [allreviews, setReviews] = useState([]);
   useEffect(() => {
-    fetch('http://localhost:5000/reviews')
+    fetch('https://eraa-imobiliria-server.vercel.app/reviews')
       .then(res => res.json())
       .then(data => setReviews(data))
   }, [])

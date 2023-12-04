@@ -18,6 +18,9 @@ const DashBoard = () => {
                 <FaRobot></FaRobot>
                 Admin Profile</NavLink> </li>
 
+              <li><NavLink to="/dashBoard/addProperty">  <FaShoppingCart></FaShoppingCart>
+                Add Property</NavLink> </li>
+
               <li><NavLink to="dashBoard/manageProperty">  <FaShoppingCart></FaShoppingCart>
                 Manage Property</NavLink> </li>
 
@@ -56,8 +59,8 @@ const DashBoard = () => {
             <FaRobot></FaRobot>
             Agent  Profile</NavLink> </li>
 
-          <li><NavLink to="/dashBoard/addProperty">  <FaShoppingCart></FaShoppingCart>
-            Add Property</NavLink> </li>
+          {/* <li><NavLink to="/dashBoard/addProperty">  <FaShoppingCart></FaShoppingCart>
+            Add Property</NavLink> </li> */}
 
           <li><NavLink to="/dashBoard/myAddedProperty">
             My Added Properties  </NavLink> </li>

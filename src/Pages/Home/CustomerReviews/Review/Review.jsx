@@ -6,7 +6,7 @@ const Review = ({ review }) => {
     <div className="mx-auto" >
       <div className=" w-80 mb-4 p-6 bg-base-100 shadow-xl">
         <figure className="px-10 pt-10">
-          <img src={reviewer_image} alt="image" className="rounded-full w-36 " />
+          <img src={reviewer_image} alt="image" className="rounded-full h-36 object-cover w-36 " />
         </figure>
         <p className="text-end" >--{agent_name} </p>
         <div className="">

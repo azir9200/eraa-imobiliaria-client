@@ -1,15 +1,15 @@
-import { useContext, useState } from "react";
+import { useContext } from "react";
 import { useLoaderData, useLocation, useNavigate } from "react-router-dom";
 import { AuthContext } from "../../Providers/AuthProviders";
 import Swal from "sweetalert2";
 import UseAxiosSecure from "../../Components/Hocks/UseExiosecure/UseAxiosSecure";
 import useWishlist from "../../Components/Hocks/useWishlist/useWishlist";
-import { Modal } from 'daisyui';
+// import { Modal } from 'daisyui';
 
 
 const HouseDetails = () => {
   const houses = useLoaderData();
-  const [isOpen, setIsOpen] = useState(false);
+
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
   const location = useLocation();
@@ -96,24 +96,20 @@ const HouseDetails = () => {
             <button onClick={handleAddtoWishlist} className="btn btn-outline btn-primary">Add to Wishlist</button>
 
             {/* modal  is here */}
-            {/* <div className="p-8">
-              <button onClick={() => setIsOpen(true)} className="btn btn-primary">
-                Open Modal
-              </button>
-
-              <Modal isOpen={isOpen} onClose={() => setIsOpen(false)}>
-                <div className="p-4">
-                  <h1 className="text-lg font-bold mb-4">DaisyUI Modal</h1>
-                  <p>This is the content of the modal.</p>
-                  <button onClick={() => setIsOpen(false)} className="mt-4 btn btn-primary">
-                    Close
-                  </button>
+            {/* You can open the modal using document.getElementById('ID').showModal() method */}
+            <button className="btn" onClick={() => document.getElementById('my_modal_4').showModal()}>Add Review</button>
+            <dialog id="my_modal_4" className="modal">
+              <div className="modal-box w-11/12 max-w-5xl">
+                <h3 className="font-bold text-lg">Hello!</h3>
+                <p className="py-4">Click the button below to close</p>
+                <div className="modal-action">
+                  <form method="dialog">
+                    {/* if there is a button, it will close the modal */}
+                    <button className="btn">Close</button>
+                  </form>
                 </div>
-              </Modal>
-            </div> */}
-
-
-            <button className="btn btn-outline btn-accent">Review</button>
+              </div>
+            </dialog>
           </div>
         </div>
       </div>

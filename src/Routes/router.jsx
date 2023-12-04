@@ -26,6 +26,7 @@ import ErrorPage from "../Components/ErrorPage/ErrorPage";
 
 
 
+
 const router = createBrowserRouter([
   {
     path: "/",
@@ -56,7 +57,7 @@ const router = createBrowserRouter([
       {
         path: '/houseDetails/:id',
         element: <HouseDetails></HouseDetails>,
-        loader: ({ params }) => fetch(`http://localhost:5000/allHouse/${params.id}`)
+        loader: ({ params }) => fetch(`https://eraa-imobiliria-server.vercel.app/allHouse/${params.id}`)
       },
       {
         path: '/makeOffer',
@@ -84,7 +85,7 @@ const router = createBrowserRouter([
       {
         path: 'myProfile/:id',
         element: <MyProfile></MyProfile>,
-        loader: ({ params }) => fetch(`http://localhost:5000/users/${params.id}`)
+        loader: ({ params }) => fetch(`https://eraa-imobiliria-server.vercel.app/users/${params.id}`)
       },
 
       {
@@ -100,6 +101,7 @@ const router = createBrowserRouter([
         path: 'addProperty',
         element: <AddProperty> <AddProperty></AddProperty> </AddProperty>
       },
+      // todo make users admin route
       {
         path: 'users',
         element: <AllUsers></AllUsers>

@@ -7,7 +7,7 @@ const useHouses = () => {
 
 
   useEffect(() => {
-    fetch('http://localhost:5000/allHouses')
+    fetch('https://eraa-imobiliria-server.vercel.app/allHouses')
       .then(res => res.json())
       .then(data => setAllHouses(data))
   }, [])
