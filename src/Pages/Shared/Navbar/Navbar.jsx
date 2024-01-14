@@ -15,7 +15,6 @@ const Navbar = () => {
     logOut()
       .then(() => { })
       .catch(error => console.log(error));
-
   }
 
   const navlinks = <>
@@ -23,7 +22,7 @@ const Navbar = () => {
     <li><Link to='/allProperties' >All Properties</Link> </li>
     
     <li>
-      <Link to='/dashBoard/myProfile'>
+      <Link to='/dashBoard/wishList'>
          Dashboard+ {wishList.length}
       </Link>
     </li>

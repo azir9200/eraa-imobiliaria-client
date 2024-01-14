@@ -158,39 +158,3 @@ const HouseDetails = () => {
 
 export default HouseDetails;
 
-
-
-
-// const ReviewForm = () => {
-//   const [review, setReview] = useState('');
-
-//   const handleSubmit = (e) => {
-//     e.preventDefault();
-//     // Handle the review submission, e.g., send it to a server
-//     console.log('Submitted review:', review);
-//   };
-
-//   return (
-//     <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8">
-//       <label htmlFor="review" className="block text-sm font-medium text-gray-700">
-//         Write a Review
-//       </label>
-//       <textarea
-//         id="review"
-//         name="review"
-//         rows="4"
-//         value={review}
-//         onChange={(e) => setReview(e.target.value)}
-//         className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
-//       ></textarea>
-//       <button
-//         type="submit"
-//         className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
-//       >
-//         Submit Review
-//       </button>
-//     </form>
-//   );
-// };
-
-// export default ReviewForm;

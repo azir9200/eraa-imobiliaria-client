@@ -18,6 +18,10 @@ const DashBoard = () => {
                 <FaRobot></FaRobot>
                 Admin Profile</NavLink> </li>
 
+              <li><NavLink to="/dashBoard/allUsers">
+                <FaRobot></FaRobot>
+                All Users</NavLink> </li>
+
               <li><NavLink to="/dashBoard/addProperty">  <FaShoppingCart></FaShoppingCart>
                 Add Property</NavLink> </li>
 
@@ -46,6 +50,10 @@ const DashBoard = () => {
                 <li><NavLink to="/dashBoard/propertyBought">
                   Property Bought </NavLink> </li>
 
+                <li><NavLink to="/dashBoard/allUsers">
+                  <FaAddressBook></FaAddressBook>
+                  All Users</NavLink> </li>
+
                 <li><NavLink to="/dashBoard/myReview">
                   <FaAddressBook></FaAddressBook>
                   My Review</NavLink> </li>
@@ -71,7 +79,7 @@ const DashBoard = () => {
           <li><NavLink to="/dashBoard/requestedProperty"> <FaAddressBook></FaAddressBook>
             Requested Properties</NavLink> </li>
 
-          {/* regula */}
+          {/* regular */}
           <div className="divider p-12" > </div>
 
           <li><NavLink to='/'><FaHome></FaHome> Home </NavLink> </li>

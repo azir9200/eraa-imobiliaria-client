@@ -5,6 +5,7 @@ import { AuthContext } from "../../../Providers/AuthProviders";
 
 const axiosSecure = axios.create({
   baseURL: 'https://eraa-imobiliria-server.vercel.app'
+  
 })
 const UseAxiosSecure = () => {
   const navigate = useNavigate();

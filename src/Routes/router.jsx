@@ -95,14 +95,14 @@ const router = createBrowserRouter([
         path: 'myReview',
         element: <MyReview></MyReview>
       },
-      //todo : make admin roote
+      //todo : make admin root
       {
         path: 'addProperty',
         element: <AddProperty></AddProperty>
       },
       // todo make users admin route
       {
-        path: 'users',
+        path: 'allUsers',
         element: <AllUsers></AllUsers>
       },
       // agent routes

@@ -4,9 +4,9 @@ import useWishlist from "../../../Components/Hocks/useWishlist/useWishlist";
 import { Link } from "react-router-dom";
 
 
-const MyWishListDetails = ({ details }) => {
-  const [refetch] = useWishlist();
-  const { _id, image, property_name, property_title, property_location, price_range, sq_ft, bedrooms, bathrooms, swimming_pool, agent_name, verification_status, description, agent_image } = details;
+const MyWishListDetails = ({ details, refetch }) => {
+  // const [refetch] = useWishlist();
+  const { _id, image, property_name, property_title, property_location, price_range, sq_ft, bedrooms, bathrooms, swimming_pool, agent_name, verification_status, description } = details;
 
   const axiosSecure = UseAxiosSecure();
 
@@ -60,7 +60,7 @@ const MyWishListDetails = ({ details }) => {
             </div>
 
             <div className="w-1/2" >
-              <img src={agent_image} alt="image" className="w-28 rounded-full" />
+              {/* <img src={agent_image} alt="image" className="w-28 rounded-full" /> */}
               <h3>Agent: {agent_name} </h3>
             </div>
           </div>

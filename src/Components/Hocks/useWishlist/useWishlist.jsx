@@ -4,17 +4,15 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProviders";
 
 
-
-
 const useWishlist = () => {
   //tan stack query
   const axiosSecure = UseAxiosSecure();
   const { user } = useContext(AuthContext);
 
   const { refetch, data: wishList = [] } = useQuery({
-    queryKey: ['wishList'],
+    queryKey: ['wishList', user?.email],
     queryFn: async () => {
-      const res = await axiosSecure.get('wishList');
+      const res = await axiosSecure.get(`/wishList?email=${user.email}`);
       return res.data;
       
     }

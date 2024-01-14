@@ -17,21 +17,3 @@ const MyWishList = () => {
 };
 
 export default MyWishList;
-
-// import { useEffect, useState } from "react";
-
-// const Carts = () => {
-//   const [allCarts, setAllCarts] = useState([]);
-
-
-//   useEffect(() => {
-//     fetch('http://localhost:5000/wishList')
-//       .then(res => res.json())
-//       .then(data => setAllCarts(data))
-//   }, [])
-
-//   return [allCarts]
-
-// };
-
-// export default Carts;
