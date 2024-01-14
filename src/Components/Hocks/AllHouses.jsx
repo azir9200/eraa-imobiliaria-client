@@ -1,9 +1,7 @@
 import { useEffect, useState } from "react";
 
-
 const useHouses = () => {
   const [allhouses, setAllHouses] = useState([]);
-
 
 
   useEffect(() => {
@@ -12,9 +10,7 @@ const useHouses = () => {
       .then(data => setAllHouses(data))
   }, [])
 
-
   return [allhouses]
-
 
 };
 

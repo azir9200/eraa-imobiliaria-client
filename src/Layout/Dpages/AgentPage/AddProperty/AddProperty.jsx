@@ -74,7 +74,7 @@ const AddProperty = () => {
           <label className="label">
             <span className="label-text">Property Location</span>
           </label>
-          <input type="text" {...register("location", { required: true })} name="lication" placeholder="location" className="input input-bordered" />
+          <input type="text" {...register("location", { required: true })} name="location" placeholder="location" className="input input-bordered" />
         </div>
 
         <div className="form-control">

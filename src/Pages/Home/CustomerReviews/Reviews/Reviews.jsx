@@ -16,11 +16,10 @@ const Reviews = () => {
 
   return (
     <div className="border" >
-      <h2 className="text-4xl text-center mt-8" >Feedback from our customer.</h2>
+      <h2 className="text-4xl text-center mt-8" >Feedback from our customer .</h2>
 
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  " >
         {
-
           reviews.map(review => <Review key={review.id} review={review} > </Review>
           )
         }

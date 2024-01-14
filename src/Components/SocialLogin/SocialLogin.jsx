@@ -1,17 +1,17 @@
 import { useContext } from "react";
-import { FaGoogle } from "react-icons/fa";
+import { FaFacebook, FaGithub, FaGoogle, FaLinkedin, FaTwitch, FaTwitter } from "react-icons/fa";
 import { AuthContext } from "../../Providers/AuthProviders";
 import UseAxiosOpen from "../UseAxiosOpen/UseAxiosOpen";
 import { useNavigate } from "react-router-dom";
 
 
 const SocialLogin = () => {
-  const { googoleSignin } = useContext(AuthContext);
+  const { googleSignIn } = useContext(AuthContext);
   const axiosOpen = UseAxiosOpen();
   const navigate = useNavigate();
 
-  const handleGoogleSignin = () => {
-    googoleSignin()
+  const handleGoogleSignIn = () => {
+    googleSignIn()
       .then(result => {
         console.log(result.user);
         const userInfo = {
@@ -27,10 +27,27 @@ const SocialLogin = () => {
   }
 
   return (
-    <div className="p-6" >
-      <div className="divider shadow-lg" ></div>
+    <div className="mt-12 mx-12" >
+     
       <div>
-        <button onClick={handleGoogleSignin} className="btn text-lg"> <FaGoogle className="mr-4" ></FaGoogle>Google </button>
+        <button onClick={handleGoogleSignIn} className="btn btn-block text-2xl bg-blue-500"  > <FaGoogle className="mr-4" ></FaGoogle>Google </button>
+      </div>
+
+
+      <div className="my-8" >
+      <button onClick={handleGoogleSignIn} className="btn btn-block text-2xl bg-slate-400"  > <FaGithub   className="mr-4"> </FaGithub>   Github </button>
+      </div>
+      <div  > 
+      <button onClick={handleGoogleSignIn} className="btn btn-block text-2xl bg-sky-300" > <FaFacebook>  </FaFacebook>   FaceBook </button>
+      </div>
+
+      <div className="my-8" >  
+      <button onClick={handleGoogleSignIn} className="btn btn-block text-2xl bg-green-300" > <FaTwitter></FaTwitter>  Twitter </button>
+      </div>
+
+      <div>  
+      <button onClick={handleGoogleSignIn} className="btn btn-block text-2xl bg-emerald-200" > <FaLinkedin></FaLinkedin>  Linkedin </button>
+     
       </div>
     </div>
   );

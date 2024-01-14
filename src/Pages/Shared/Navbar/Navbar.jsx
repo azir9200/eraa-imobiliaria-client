@@ -3,14 +3,13 @@ import logo from '../../../assets/logo.png'
 import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProviders";
 import useHouses from "../../../Components/Hocks/AllHouses";
-
-// import useWishlist from "../../../Components/Hocks/useWishlist/useWishlist";
+import useWishlist from "../../../Components/Hocks/useWishlist/useWishlist";
 
 
 const Navbar = () => {
   const { user, logOut } = useContext(AuthContext);
   const { allhouses } = useHouses();
-  // const [wishList] = useWishlist()
+  const [ wishList] = useWishlist();
 
   const handleLogout = () => {
     logOut()
@@ -22,11 +21,10 @@ const Navbar = () => {
   const navlinks = <>
     <li><Link to='/' >Home</Link> </li>
     <li><Link to='/allProperties' >All Properties</Link> </li>
-    {/* <li>  <Link to={`/dashBoard/myProfile/${_id} `} > User Dahboard </Link>  </li> */}
-
+    
     <li>
       <Link to='/dashBoard/myProfile'>
-        User Dahboard
+         Dashboard+ {wishList.length}
       </Link>
     </li>
 

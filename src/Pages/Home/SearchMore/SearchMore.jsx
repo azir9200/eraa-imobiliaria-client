@@ -18,7 +18,7 @@ const SearchMore = () => {
           <Link to='/allProperties' >    <button className="btn btn-outline btn-success text-3xl w-36 my-8  mx-8 text-center ">RENT</button></Link>
 
           <Link to='/allProperties' >
-            <button className="btn btn-outline btn-accent text-3xl w-36 my-8 text-center   ">Tresspass</button></Link>
+            <button className="btn btn-outline btn-accent text-3xl w-36 my-8 text-center ">Tresspass</button></Link>
         </div>
         <div className="w-1/3 md:flex justify-center items-center mx-auto pb-8 ">
 

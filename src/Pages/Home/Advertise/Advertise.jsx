@@ -1,5 +1,6 @@
 import { Link } from 'react-router-dom';
 import owner1 from '../../../assets/owner1.png'
+import MyWishList from '../../../Components/Hocks/MyWishList';
 
 const Advertise = () => {
   return (
@@ -15,7 +16,9 @@ const Advertise = () => {
           <p className='text-lg mb-6 ' >To sell or rent your property, make an evaluation or create an advertisement in just a few minutes.</p>
           <div className='  md:flex' >
 
-
+<div>
+  <MyWishList></MyWishList>
+</div>
             <Link to='/allProperties' >
               <button className="btn btn-outline btn-primary">FREE ADVERTISE</button></Link>
 

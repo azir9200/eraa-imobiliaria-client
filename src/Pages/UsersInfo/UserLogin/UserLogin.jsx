@@ -14,7 +14,7 @@ const UserLogin = () => {
 
   const from = location.state?.from?.pathname || "/";
 
-  console.log('state in the AZIR location', location.state)
+  // console.log('state in the location', location.state)
   useEffect(() => {
     loadCaptchaEnginge(6);
   }, [])
@@ -30,7 +30,7 @@ const UserLogin = () => {
         const user = result.user;
         console.log(user);
         Swal.fire({
-          title: 'Success!',
+          title: 'Your login Successful !',
           showClass: {
             popup: ` animate__animated animate__fadeInUp animate__faster  `
           },
@@ -48,13 +48,14 @@ const UserLogin = () => {
   }
 
   return (
-    <div className="hero min-h-screen bg-base-200">
-      <div className="hero-content flex-col lg:flex-row-reverse">
-        <div className="text-center   md:w-1/2 ">
-          <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
-        </div>
-        <div className="card  md:w-1/2  shadow-2xl bg-base-100">
-          <h1 className="text-5xl text-center font-bold">Login now!</h1>
+    <div className="p-8 m-8 bg-base-200">
+      <div>
+      <h1 className="text-3xl mb-8 text-center font-xl">Login First </h1>
+      </div>
+      <div className="lg:flex">
+       
+        <div className=" md:w-1/2 rounded-xl shadow-2xl bg-base-100">
+         
           <form onSubmit={handleLogin} className="card-body">
             <div className="form-control">
               <label className="label">
@@ -85,7 +86,10 @@ const UserLogin = () => {
           </form>
           <p>
             <Link to="/userSignup" >   <div className="text-center text-lg" >Dont have a account yet ?  <span className="font-bold text-amber-800" >Register</span> </div>  </Link></p>
-          <SocialLogin></SocialLogin>
+         
+        </div>
+        <div className="text-center border  md:w-1/2 ">
+        <SocialLogin></SocialLogin>
         </div>
       </div>
     </div>

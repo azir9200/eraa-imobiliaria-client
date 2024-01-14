@@ -36,7 +36,6 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Home></Home>
-
       },
       {
         path: '/allProperties',
@@ -127,12 +126,7 @@ const router = createBrowserRouter([
         path: 'requestedProperty',
         element: <RequestedProperty></RequestedProperty>
       }
-
-
-
     ]
   }
 ]);
-
-
 export default router;

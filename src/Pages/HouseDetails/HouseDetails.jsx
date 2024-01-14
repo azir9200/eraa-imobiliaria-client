@@ -4,7 +4,7 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import Swal from "sweetalert2";
 import UseAxiosSecure from "../../Components/Hocks/UseExiosecure/UseAxiosSecure";
 import useWishlist from "../../Components/Hocks/useWishlist/useWishlist";
-// import { Modal } from 'daisyui';
+
 
 
 const HouseDetails = () => {
@@ -68,7 +68,7 @@ const HouseDetails = () => {
 
         <figure className="w-3/5" ><img src={image} alt="Album" className="max-h[600px]  " /></figure>
 
-        <div className="card-body w-2/5 ">
+        <div className="card-body m-8 border border-gray-500 lg:w-2/5 w-full">
           <div>
             <h2 className="text-xl" >Property Name:   {property_name} </h2>
             <h2 className="text-xl" >Property Title: {property_title} </h2>
@@ -96,29 +96,101 @@ const HouseDetails = () => {
             <button onClick={handleAddtoWishlist} className="btn btn-outline btn-primary">Add to Wishlist</button>
 
             {/* modal  is here */}
-            {/* You can open the modal using document.getElementById('ID').showModal() method */}
+            
             <button className="btn" onClick={() => document.getElementById('my_modal_4').showModal()}>Add Review</button>
             <dialog id="my_modal_4" className="modal">
-              <div className="modal-box w-11/12 max-w-5xl">
-                <h3 className="font-bold text-lg">Hello!</h3>
-                <p className="py-4">Click the button below to close</p>
-                <div className="modal-action">
-                  <form method="dialog">
-                    {/* if there is a button, it will close the modal */}
-                    <button className="btn">Close</button>
-                  </form>
+              <div className="modal-box w-11/12 max-w-6xl">
+          
+                <div>
+                <form  className="max-w-md mx-auto mt-8">
+      <label htmlFor="review" className="block text-xl text-center font-medium text-gray-700">
+        Write a Review
+      </label>
+
+            <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Your Name</span>
+                </label>
+                <input type="text"  name="name" placeholder="Name" className="input input-bordered" />               
+              </div>
+            <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Your Email</span>
+                </label>
+                <input type="email"  name="email" placeholder="Your Email " className="input input-bordered" />               
+              </div>
+
+              <div className="form-control">
+                <label className="label">
+                  <span className="label-text">Photo URL</span>
+                </label>
+                <input type="text" name="photoURL" placeholder="photo URL" className="input input-bordered" />
+                
+              </div>
+              <label className="label">
+                  <span className="label-text">Your Comment</span>
+                </label>
+      <textarea
+        id="review"
+        name="review"
+        rows="6"
+       
+        onChange={(e) =>(e.target.value)}
+        className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+      ></textarea>
+      <button
+        type="submit"
+        className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+      >
+        Submit Review
+      </button>
+    </form>
                 </div>
               </div>
             </dialog>
           </div>
         </div>
       </div>
-      <div>
-
-        <h2 className="text-4xl text-center mt-8" >Reviews from our customer.</h2>
-      </div>
+      
     </div>
   );
 };
 
 export default HouseDetails;
+
+
+
+
+// const ReviewForm = () => {
+//   const [review, setReview] = useState('');
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+//     // Handle the review submission, e.g., send it to a server
+//     console.log('Submitted review:', review);
+//   };
+
+//   return (
+//     <form onSubmit={handleSubmit} className="max-w-md mx-auto mt-8">
+//       <label htmlFor="review" className="block text-sm font-medium text-gray-700">
+//         Write a Review
+//       </label>
+//       <textarea
+//         id="review"
+//         name="review"
+//         rows="4"
+//         value={review}
+//         onChange={(e) => setReview(e.target.value)}
+//         className="mt-1 p-2 border rounded-md w-full focus:outline-none focus:ring focus:border-blue-300"
+//       ></textarea>
+//       <button
+//         type="submit"
+//         className="mt-4 px-4 py-2 bg-blue-500 text-white rounded-md hover:bg-blue-600 focus:outline-none focus:ring focus:border-blue-300"
+//       >
+//         Submit Review
+//       </button>
+//     </form>
+//   );
+// };
+
+// export default ReviewForm;

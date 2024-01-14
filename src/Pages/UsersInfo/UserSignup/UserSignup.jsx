@@ -1,6 +1,6 @@
 import { useContext } from "react";
 import { useForm } from "react-hook-form";
-import { Link, useNavigate } from "react-router-dom";
+import { Link, useNavigate, useLocation } from "react-router-dom";
 import { AuthContext } from "../../../Providers/AuthProviders";
 import Swal from "sweetalert2";
 import UseAxiosOpen from "../../../Components/UseAxiosOpen/UseAxiosOpen";
@@ -11,6 +11,9 @@ const UserSignup = () => {
   const { register, handleSubmit, reset, formState: { errors } } = useForm();
   const { createUser, updateUserInfo } = useContext(AuthContext);
   const navigate = useNavigate();
+  const location = useLocation();
+
+  const from = location.state?.from?.pathname || "/";
 
   const onSubmit = (data) => {
     console.log(data)
@@ -38,7 +41,8 @@ const UserSignup = () => {
                     showConfirmButton: false,
                     timer: 1500
                   });
-                  navigate('/');
+                  
+                  navigate(from, { replace: true });
                 }
               })
           })
@@ -48,13 +52,16 @@ const UserSignup = () => {
 
   return (
     <>
-      <div className="hero min-h-screen bg-base-200">
-        <div className="hero-content flex-col lg:flex-row-reverse">
-          <div className="text-center   md:w-1/2 ">
-            <p className="py-6">Provident cupiditate voluptatem et in. Quaerat fugiat ut assumenda excepturi exercitationem quasi. In deleniti eaque aut repudiandae et a id nisi.</p>
+      <div className=" bg-base-200">
+        <div>
+        <h1 className="text-5xl mt-12 text-center font-2xl">SignUp Please!</h1>
+        </div>
+        <div className=" lg:flex">
+          <div className="text-center border border-violet-400  md:w-1/2 ">                      
+            <SocialLogin></SocialLogin>        
           </div>
-          <div className="card  md:w-1/2  shadow-2xl bg-base-100">
-            <h1 className="text-5xl text-center font-bold">Signup Please!</h1>
+          <div className="card px-8 md:w-1/2  shadow-2xl bg-base-100">
+            
             <form onSubmit={handleSubmit(onSubmit)} className="card-body">
               <div className="form-control">
                 <label className="label">
@@ -85,24 +92,8 @@ const UserSignup = () => {
                   <span className="label-text">Password</span>
                 </label>
                 <input type="password" {...register("password")} name="password" placeholder="password" className="input input-bordered" />
-                {/* {errors.password && <p className="text-red-700" >Password field is required</p>}
-                 */}
+                
               </div>
-
-              {/* <div className="form-control">
-                <label className="label">
-                  <span className="label-text">Password</span>
-                </label>
-                <input type="password" {...register("password", {
-                  required: true,
-                  minLength: 6,
-                  maxLength: 20,
-                  pattern: /^(?=.*\d)(?=.*[a-z])(?=.*[A-Z])(?=.*[a-zA-Z]).{8,}$/
-                })} name="password" placeholder="password" className="input input-bordered" />
-                {errors.password?.type === 'required' && <p className="text-red-700" >Password is required.</p>}
-                {errors.password?.type === 'maxLength' && <p className="text-red-700" >Password must be 7 Caracter.</p>}
-                {errors.password?.type === 'maxLength' && <p className="text-red-700" >Password can not  be more then 12 Caracter.</p>}
-              </div> */}
 
               <div className="form-control mt-6">
                 <input className="btn btn-primary  text-2xl  " type="submit" value="Signup" />
@@ -110,7 +101,7 @@ const UserSignup = () => {
             </form>
             <p className="px-10" ><Link to="/userLogin" > <div className="text-center text-lg" >Already have an account  ?  <span className="font-bold text-amber-800" >Login</span></div></Link>
             </p>
-            <SocialLogin></SocialLogin>
+            
           </div>
 
         </div >

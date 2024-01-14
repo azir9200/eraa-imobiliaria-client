@@ -1,11 +1,9 @@
 import { useEffect, useState } from "react";
-
 import { Swiper, SwiperSlide } from 'swiper/react';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import { Navigation } from 'swiper/modules';
-import { Rating } from '@smastrom/react-rating'
-
+import { Rating } from '@smastrom/react-rating';
 import '@smastrom/react-rating/style.css'
 
 
@@ -16,7 +14,6 @@ const Reviews = () => {
       .then(res => res.json())
       .then(data => setReviews(data))
   }, [])
-
 
 
   return (
