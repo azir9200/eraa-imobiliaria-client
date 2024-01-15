@@ -7,6 +7,10 @@ import useAdmin from "../../Components/Hocks/UseAdmin/UseAdmin";
 const DashBoard = () => {
 
   const [isAdmin] = useAdmin();
+console.log(isAdmin);
+
+
+
   return (
 
     <div className="flex">

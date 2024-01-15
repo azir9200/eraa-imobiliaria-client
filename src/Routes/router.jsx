@@ -110,6 +110,8 @@ const router = createBrowserRouter([
         path: 'agentProfile',
         element: <AgentProfile></AgentProfile>
       },
+
+      // wrap with <Admin route>
       {
         path: 'addProperty',
         element: <AddProperty></AddProperty>

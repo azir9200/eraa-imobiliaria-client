@@ -36,6 +36,14 @@ const MakeOffer = () => {
               </div>
             </div>
 
+            <div className="form-control">
+                <label className="label">
+                  <span className="label-text"> Property Price</span>
+                  <input type="text" />
+                </label>
+                <input type="agentName" name="agentName" placeholder="Agent Name" className="input input-bordered" />
+              </div>
+
             <div className="md:flex gap-6" >
               <div className="form-control">
                 <label className="label">

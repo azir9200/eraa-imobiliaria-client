@@ -5,7 +5,7 @@ const MyWishList = () => {
   const [wishLists, setWishList] = useState([])
   
   useEffect(() => {
-    fetch('http://localhost:5000/wishList')
+    fetch('https://eraa-imobiliria-server.vercel.app/wishList')
       .then(res => res.json())
       .then(data => setWishList(data))
   }, [])
