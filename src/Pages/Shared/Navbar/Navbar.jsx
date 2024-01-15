@@ -4,6 +4,7 @@ import { useContext } from "react";
 import { AuthContext } from "../../../Providers/AuthProviders";
 import useHouses from "../../../Components/Hocks/AllHouses";
 import useWishlist from "../../../Components/Hocks/useWishlist/useWishlist";
+import { FaAddressBook } from "react-icons/fa";
 
 
 const Navbar = () => {
@@ -26,6 +27,12 @@ const Navbar = () => {
          Dashboard+ {wishList.length}
       </Link>
     </li>
+    
+{/* todo - to delete */}
+    <li><Link to="/dashBoard/allUsers">
+                  <FaAddressBook></FaAddressBook>
+                   All Users</Link> </li>
+
 
     {
       user ? <>

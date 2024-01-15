@@ -11,7 +11,7 @@ const DashBoard = () => {
 
     <div className="flex">
       <div className="w-64 min-h-screen bg-emerald-300" >
-        <ul className="menu  " >
+        <ul className="menu p-6 " >
           {
             isAdmin ? <>
               <li><NavLink to="/dashBoard/adminProfile">
@@ -20,7 +20,7 @@ const DashBoard = () => {
 
               <li><NavLink to="/dashBoard/allUsers">
                 <FaRobot></FaRobot>
-                All Users</NavLink> </li>
+                Admin All Users</NavLink> </li>
 
               <li><NavLink to="/dashBoard/addProperty">  <FaShoppingCart></FaShoppingCart>
                 Add Property</NavLink> </li>
@@ -42,7 +42,7 @@ const DashBoard = () => {
                 {/* normal dashboard */}
                 <li><NavLink to="/dashBoard/myProfile">
                   <FaRobot></FaRobot>
-                  Profile</NavLink> </li>
+                 My Profile</NavLink> </li>
 
                 <li><NavLink to="/dashBoard/wishList"> <FaShoppingCart></FaShoppingCart>
                   My Wish List </NavLink> </li>
@@ -52,7 +52,7 @@ const DashBoard = () => {
 
                 <li><NavLink to="/dashBoard/allUsers">
                   <FaAddressBook></FaAddressBook>
-                  All Users</NavLink> </li>
+                 reg  All Users</NavLink> </li>
 
                 <li><NavLink to="/dashBoard/myReview">
                   <FaAddressBook></FaAddressBook>

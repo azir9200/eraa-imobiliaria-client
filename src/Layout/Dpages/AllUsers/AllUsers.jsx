@@ -2,19 +2,33 @@ import { useQuery } from "@tanstack/react-query";
 import UseAxiosSecure from "../../../Components/Hocks/UseExiosecure/UseAxiosSecure";
 import { FaTrashAlt, FaUsers } from "react-icons/fa";
 import Swal from "sweetalert2";
+import { useEffect, useState } from "react";
+import useWishlist from "../../../Components/Hocks/useWishlist/useWishlist";
 
 
 const AllUsers = () => {
-  const axiosSecure = UseAxiosSecure();
 
-  const { data: users = [], refetch } = useQuery({
-    queryKey: ['users'],
-    queryFn: async () => {
-      const res = await axiosSecure.get('/users'
-      );
-      return res.data;
-    }
-  })
+const [users, setUsers] = useState([])
+useEffect(() => {
+  fetch('http://localhost:5000/users')
+    .then(res => res.json())
+    .then(data => setUsers(data))
+}, [])
+
+
+   const axiosSecure = UseAxiosSecure();
+   const [ refetch] = useWishlist();
+
+  // const { data: users = [], refetch } = useQuery({
+  //   queryKey: ['users'],
+  //   queryFn: async () => {
+  //     const res = await axiosSecure.get('/users',{
+  //       headers: {
+  //         Authorization: `Bearer ${localStorage.getItem('access-token')}`}
+  //     });
+  //     return res.data;
+  //   }
+  // })
 
   const handleMakeAdmin = (user) => {
     axiosSecure.patch(`/users/admin/${user._id}`)
@@ -33,7 +47,7 @@ const AllUsers = () => {
       })
   }
 
-  const handleDeleteUser = user => {
+  const handleDeleteUser = users => {
     Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",
@@ -45,7 +59,7 @@ const AllUsers = () => {
     }).then((result) => {
       if (result.isConfirmed) {
 
-        axiosSecure.delete(`/users/${user._id}`)
+        axiosSecure.delete(`/users/${users._id}`)
           .then(res => {
             if (res.data.deletedCount > 0) {
               refetch();
@@ -92,7 +106,7 @@ const AllUsers = () => {
                       <button
                         onClick={() => handleMakeAdmin(user)}
                         className="btn btn-lg">
-                        <FaUsers className="text-emerald-400 text-2xl"></FaUsers>
+                        <FaUsers className="text-emerald-400 text-2xl">User</FaUsers>
                       </button>}
                 </td>
 
