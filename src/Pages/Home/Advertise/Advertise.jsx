@@ -16,9 +16,6 @@ const Advertise = () => {
           <p className='text-lg mb-6 ' >To sell or rent your property, make an evaluation or create an advertisement in just a few minutes.</p>
           <div className='  md:flex' >
 
-<div>
-  <MyWishList></MyWishList>
-</div>
             <Link to='/allProperties' >
               <button className="btn btn-outline btn-primary">FREE ADVERTISE</button></Link>
 

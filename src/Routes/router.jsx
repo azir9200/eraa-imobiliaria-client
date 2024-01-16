@@ -21,6 +21,8 @@ import MyReview from "../Layout/Dpages/NormalUsers/MyReview/MyReview";
 import ModalReview from "../Pages/Home/ModalReview/ModalReview";
 import MakeOffer from "../Pages/Dashboard/MakeOffer/MakeOffer";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
+import ManageProperty from "../Layout/Dpages/Admin/ManageProperty/ManageProperty";
+import UpdateHouse from "../Layout/Dpages/Admin/UpdateHouse/UpdateHouse";
 
 
 
@@ -115,6 +117,17 @@ const router = createBrowserRouter([
       {
         path: 'addProperty',
         element: <AddProperty></AddProperty>
+      },
+      {
+        // path: '/updateHouse/:id',
+        // element: <UpdateHouse></UpdateHouse>,        
+        //  loader: ({ params }) => fetch(`http://localhost:5000/allHouse/${params.id}`)
+        // loader: ({ params }) => fetch(`https://eraa-imobiliria-server.vercel.app/allHouse/${params.id}`)
+        
+      },
+      {
+        path: 'manageProperty',
+        element: <ManageProperty></ManageProperty>
       },
       {
         path: 'myAddedProperty',

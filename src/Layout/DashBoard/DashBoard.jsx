@@ -29,8 +29,10 @@ console.log(isAdmin);
               <li><NavLink to="/dashBoard/addProperty">  <FaShoppingCart></FaShoppingCart>
                 Add Property</NavLink> </li>
 
-              <li><NavLink to="dashBoard/manageProperty">  <FaShoppingCart></FaShoppingCart>
+              <li><NavLink to="/dashBoard/manageProperty">  <FaShoppingCart></FaShoppingCart>
                 Manage Property</NavLink> </li>
+
+
 
               <li><NavLink to="/dashBoard/manageUsers">
                 Manage Users  </NavLink> </li>
