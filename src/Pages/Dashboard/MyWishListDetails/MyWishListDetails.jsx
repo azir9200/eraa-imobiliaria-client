@@ -4,7 +4,7 @@ import useWishlist from "../../../Components/Hocks/useWishlist/useWishlist";
 import { Link } from "react-router-dom";
 
 
-const MyWishListDetails = ({ details, refetch }) => {
+const MyWishListDetails = ({ details, refetch, wishList }) => {
   // const [refetch] = useWishlist();
   const { _id, image, property_name, property_title, property_location, price_range, sq_ft, bedrooms, bathrooms, swimming_pool, agent_name, verification_status, description } = details;
 
@@ -40,7 +40,9 @@ const MyWishListDetails = ({ details, refetch }) => {
     <div>
       <div className="card  bg-base-100 shadow-xl">
 
-        <figure className="w-3/5" ><img src={image} alt="Album" className="max-h[600px]  " /></figure>
+        {/* <figure className="w-3/5" ><img src={image} alt="Album" className="max-h[600px]  " /></figure> */}
+
+        <img src={image} alt="image" className="rounded object-cover  md:w-96 lg:w-full h-96 " />
 
         <div className="card-body  ">
           <div>
@@ -71,6 +73,12 @@ const MyWishListDetails = ({ details, refetch }) => {
               <button className="btn btn-outline btn-primary">Make an Offer</button>
             </Link>
 
+            {
+              wishList.length ?   <Link to="/dashBoard/payment"> 
+              <button className="btn btn-outline btn-success"> Pay now</button> </Link>  :
+                <Link to="/dashBoard/payment"> 
+                <button disabled className="btn btn-outline btn-success"> Pay now</button> </Link> 
+            }
 
             <button onClick={() => handelRemoveWishList(_id)} className="btn btn-outline btn-warning">Remove</button>
           </div>

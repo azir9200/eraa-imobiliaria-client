@@ -23,6 +23,7 @@ import MakeOffer from "../Pages/Dashboard/MakeOffer/MakeOffer";
 import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import ManageProperty from "../Layout/Dpages/Admin/ManageProperty/ManageProperty";
 import UpdateHouse from "../Layout/Dpages/Admin/UpdateHouse/UpdateHouse";
+import Payment from "../Pages/Dashboard/Payment/Payment";
 
 
 
@@ -80,6 +81,10 @@ const router = createBrowserRouter([
         element: <WishList></WishList>
       },
       {
+        path: 'payment',
+        element: <Payment></Payment>
+      },
+      {
         path: 'myProfile',
         element: <MyProfile></MyProfile>
       },
@@ -107,6 +112,10 @@ const router = createBrowserRouter([
         path: 'allUsers',
         element: <AllUsers></AllUsers>
       },
+      {
+        path: 'adminProfile',
+        element: <WishList></WishList>
+      },
       // agent routes
       {
         path: 'agentProfile',
@@ -119,9 +128,9 @@ const router = createBrowserRouter([
         element: <AddProperty></AddProperty>
       },
       {
-        // path: '/updateHouse/:id',
-        // element: <UpdateHouse></UpdateHouse>,        
-        //  loader: ({ params }) => fetch(`http://localhost:5000/allHouse/${params.id}`)
+         path: 'updateHouse/:id',
+       element: <UpdateHouse></UpdateHouse>,        
+         loader: ({ params }) => fetch(`http://localhost:5000/allHouse/${params.id}`)
         // loader: ({ params }) => fetch(`https://eraa-imobiliria-server.vercel.app/allHouse/${params.id}`)
         
       },

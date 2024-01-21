@@ -27,12 +27,6 @@ const Navbar = () => {
          Dashboard+ {wishList.length}
       </Link>
     </li>
-    
-{/* todo - to delete */}
-    <li><Link to="/dashBoard/allUsers">
-                  <FaAddressBook></FaAddressBook>
-                   All Users</Link> </li>
-
 
     {
       user ? <>

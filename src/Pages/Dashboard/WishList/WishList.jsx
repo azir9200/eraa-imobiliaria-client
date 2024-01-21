@@ -1,3 +1,4 @@
+
 import useWishlist from "../../../Components/Hocks/useWishlist/useWishlist";
 import MyWishListDetails from "../MyWishListDetails/MyWishListDetails";
 
@@ -12,11 +13,13 @@ const WishList = () => {
 
       <h2 className="text-2xl text-center border-b-8 border-slate-300 m-8">My total Wish List  is : {wishList.length} </h2>
 
-      <div className="grid grid-cols-1  lg:grid-cols-2 gap-4 " >
+                                                                                                                                  
+       <div className="grid grid-cols-1  lg:grid-cols-2 gap-4 " >  
 
         {
           wishList.map(details => <MyWishListDetails key={details._id} details={details}
             refetch={refetch}
+            wishList={wishList}
           > </MyWishListDetails>)
         }
       </div>

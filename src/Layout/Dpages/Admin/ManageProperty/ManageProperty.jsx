@@ -6,11 +6,16 @@ import { useState } from "react";
 
 const ManageProperty = () => {
 
-const [allHouses, refetch] = useHouses();
-const [_id]  = allHouses;
+const [ allHouses, refetch] = useHouses();
+// const {_id}  = allHouses;
 const [remain, setRemain] = useState([])
 
+
+console.log(allHouses);
+
 const handleDeleteItem = (_id) => {
+console.log("_id",  _id)
+
   Swal.fire({
       title: "Are you sure?",
       text: "You won't be able to revert this!",

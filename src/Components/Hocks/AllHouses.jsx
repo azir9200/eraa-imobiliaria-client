@@ -1,16 +1,20 @@
 import { useEffect, useState } from "react";
+import { useQuery } from "@tanstack/react-query";
+import UseAxiosOpen from "../UseAxiosOpen/UseAxiosOpen";
 
 const useHouses = () => {
-  const [allhouses, setAllHouses] = useState([]);
+const axiosOpen = UseAxiosOpen();
 
 
-  useEffect(() => {
-    fetch('https://eraa-imobiliria-server.vercel.app/allHouses')
-      .then(res => res.json())
-      .then(data => setAllHouses(data))
-  }, [])
+  const {data: allHouses = [], isPending: loading, refetch} = useQuery({
+    queryKey: ['allHouses'], 
+    queryFn: async() =>{
+        const res = await axiosOpen.get('/allHouses');
+        return res.data;
+    }
+})
 
-  return [allhouses]
+  return [allHouses, loading, refetch]
 
 };
 

@@ -75,7 +75,7 @@ const UserSignup = () => {
                 <label className="label">
                   <span className="label-text">Photo URL</span>
                 </label>
-                <input type="text" {...register("photoURL", { required: true })} name="photoURL" placeholder="photo URL" className="input input-bordered" />
+                <input type="text" {...register("photoURL")} name="photoURL" placeholder="photo URL" className="input input-bordered" />
                 {errors.photoURL && <span className="text-red-700" >Photo  URL is required</span>}
               </div>
 

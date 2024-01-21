@@ -22,25 +22,18 @@ console.log(isAdmin);
                 <FaRobot></FaRobot>
                 Admin Profile</NavLink> </li>
 
-              <li><NavLink to="/dashBoard/allUsers">
-                <FaRobot></FaRobot>
-                Admin All Users</NavLink> </li>
-
+             
               <li><NavLink to="/dashBoard/addProperty">  <FaShoppingCart></FaShoppingCart>
                 Add Property</NavLink> </li>
 
               <li><NavLink to="/dashBoard/manageProperty">  <FaShoppingCart></FaShoppingCart>
                 Manage Property</NavLink> </li>
 
+                <li><NavLink to="/dashBoard/allUsers">
+                <FaRobot></FaRobot>
+                Manage Users </NavLink> </li>
 
-
-              <li><NavLink to="/dashBoard/manageUsers">
-                Manage Users  </NavLink> </li>
-
-
-              <li><NavLink to="/dashBoard/manageReview">
-                <FaAddressBook></FaAddressBook>
-                Manage Reviews</NavLink> </li>
+             
 
 
             </> :
@@ -56,9 +49,6 @@ console.log(isAdmin);
                 <li><NavLink to="/dashBoard/propertyBought">
                   Property Bought </NavLink> </li>
 
-                <li><NavLink to="/dashBoard/allUsers">
-                  <FaAddressBook></FaAddressBook>
-                 reg  All Users</NavLink> </li>
 
                 <li><NavLink to="/dashBoard/myReview">
                   <FaAddressBook></FaAddressBook>
@@ -73,9 +63,7 @@ console.log(isAdmin);
             <FaRobot></FaRobot>
             Agent  Profile</NavLink> </li>
 
-          {/* <li><NavLink to="/dashBoard/addProperty">  <FaShoppingCart></FaShoppingCart>
-            Add Property</NavLink> </li> */}
-
+     
           <li><NavLink to="/dashBoard/myAddedProperty">
             My Added Properties  </NavLink> </li>
 

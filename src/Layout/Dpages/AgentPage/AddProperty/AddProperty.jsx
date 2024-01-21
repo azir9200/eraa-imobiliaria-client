@@ -2,8 +2,6 @@ import { useForm } from "react-hook-form";
 import UseAxiosOpen from "../../../../Components/UseAxiosOpen/UseAxiosOpen";
 import UseAxiosSecure from "../../../../Components/Hocks/UseExiosecure/UseAxiosSecure";
 import Swal from "sweetalert2";
-// const image_hosting_key = import.meta.env.VITE_IMAGE_HOSTING_KEY;
-// const image_hosting_api = `https://api.imgbb.com/1/upload?key=${image_hosting_key}`;
 
 const AddProperty = () => {
   const { register, handleSubmit, reset } = useForm();
@@ -13,15 +11,7 @@ const AddProperty = () => {
    const onSubmit = async(data) => {
     console.log(data)
 
-//.......
-    // const image = data.image;
-    // const res = await axiosOpen.post(image_hosting_api, image, {
-    //   headers: {
-    //     'content-type': 'multipart/form-data'
-    //   }
-    // });
-    // if (res.data.success) { }
-      // now send the menu item data to the server with the image url
+
       const propertyInfo = {
         name: data.name,
         photoURL: data.photoURL,
@@ -32,11 +22,7 @@ const AddProperty = () => {
       }
       console.log(propertyInfo);
 
-      // const addProperty =  axiosSecure.post('/allHouses', propertyInfo);      
-      // console.log(addProperty.data)
-
-   // send data to the server
-  //  'https://eraa-imobiliria-server.vercel.app'
+      
   
   //  fetch('https://eraa-imobiliria-server.vercel.app/allHouses', {
     fetch('http://localhost:5000/allHouses', {
