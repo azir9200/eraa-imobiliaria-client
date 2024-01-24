@@ -4,31 +4,30 @@ import { FaTrashAlt, FaUsers } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { useEffect, useState } from "react";
 import useWishlist from "../../../Components/Hocks/useWishlist/useWishlist";
+import UseAxiosOpen from "../../../Components/UseAxiosOpen/UseAxiosOpen";
 
 
 const AllUsers = () => {
 
-const [users, setUsers] = useState([])
-useEffect(() => {
-  fetch('https://eraa-imobiliria-server.vercel.app/users')
-    .then(res => res.json())
-    .then(data => setUsers(data))
-}, [])
+// const [users, setUsers] = useState([])
+// useEffect(() => {
+//   fetch('https://eraa-imobiliria-server.vercel.app/users')
+//     .then(res => res.json())
+//     .then(data => setUsers(data))
+// }, [])
 
 
    const axiosSecure = UseAxiosSecure();
-   const [ refetch] = useWishlist();
+  //  const [ refetch] = useWishlist();
 
-  // const { data: users = [], refetch } = useQuery({
-  //   queryKey: ['users'],
-  //   queryFn: async () => {
-  //     const res = await axiosSecure.get('/users',{
-  //       headers: {
-  //         Authorization: `Bearer ${localStorage.getItem('access-token')}`}
-  //     });
-  //     return res.data;
-  //   }
-  // })
+  //  const axiosSecure = UseAxiosOpen();
+    const { data: users = [], refetch } = useQuery({
+        queryKey: ['users'],
+        queryFn: async () => {
+            const res = await axiosSecure.get('/users');
+            return res.data;
+        }
+    })
 
   const handleMakeAdmin = (user) => {
     axiosSecure.patch(`/users/admin/${user._id}`)
@@ -41,11 +40,12 @@ useEffect(() => {
             icon: "success",
             title: `${user.name} is an Admin Now!`,
             showConfirmButton: false,
-            timer: 1500
+            timer: 1000
           });
         }
       })
-  }
+  } 
+
 
   const handleDeleteUser = users => {
     Swal.fire({
@@ -100,7 +100,7 @@ useEffect(() => {
                 <td>{user.name} </td>
                 <td>{user.email} </td>
 
-                <td>
+                {/* <td>
                   {
                     user.role === 'admin' ? 'Admin' :
                       <button
@@ -108,7 +108,16 @@ useEffect(() => {
                         className="btn btn-lg">
                         <FaUsers className="text-emerald-400 text-2xl">User</FaUsers>
                       </button>}
-                </td>
+                </td> */}
+
+                <td>
+                  { users.role === 'admin' ? 'Admin' : <button
+                 onClick={() => handleMakeAdmin(users)}
+                 className="btn btn-lg bg-orange-500">
+                <FaUsers className="text-white 
+               text-2xl"></FaUsers>
+              </button>}
+                                </td>
 
                 <td>  <button
                   onClick={() => handleDeleteUser(user)}
