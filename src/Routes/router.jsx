@@ -130,8 +130,8 @@ const router = createBrowserRouter([
       {
          path: 'updateHouse/:id',
        element: <UpdateHouse></UpdateHouse>,        
-         loader: ({ params }) => fetch(`http://localhost:5000/allHouse/${params.id}`)
-        // loader: ({ params }) => fetch(`https://eraa-imobiliria-server.vercel.app/allHouse/${params.id}`)
+        //  loader: ({ params }) => fetch(`http://localhost:5000/allHouse/${params.id}`)
+        loader: ({ params }) => fetch(`https://eraa-imobiliria-server.vercel.app/allHouse/${params.id}`)
         
       },
       {

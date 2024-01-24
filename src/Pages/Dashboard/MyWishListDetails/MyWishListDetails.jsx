@@ -39,14 +39,12 @@ const MyWishListDetails = ({ details, refetch, wishList }) => {
   return (
     <div>
       <div className="card  bg-base-100 shadow-xl">
-
-        {/* <figure className="w-3/5" ><img src={image} alt="Album" className="max-h[600px]  " /></figure> */}
-
-        <img src={image} alt="image" className="rounded object-cover  md:w-96 lg:w-full h-96 " />
+      <h2 className="text-xl border shadow-xl mx-auto p-4 justify-center " > Property:   {property_name} </h2>
+              <img src={image} alt="image" className="rounded object-cover mx-auto justify-center  md:w-96 lg:w-full h-96 " />
 
         <div className="card-body  ">
           <div>
-            <h2 className="text-xl" >Property Name:   {property_name} </h2>
+            
             <h2 className="text-xl" >Property Title: {property_title} </h2>
             <h2 className="text-xl">Location: {property_location} </h2>
             <p className="text-xl" >Price: {price_range} </p>

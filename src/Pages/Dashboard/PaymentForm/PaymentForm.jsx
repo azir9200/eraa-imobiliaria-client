@@ -20,10 +20,8 @@ const navigate = useNavigate();
 
 const totalPrice = wishList.reduce((total, item) => total + item.price, 0)
 
-// const { user } = useContext(AuthContext);
+ useEffect(() => {
 
-
-useEffect(() => {
   if (totalPrice > 0) {
       axiosSecure.post('/create-payment-intent', { price: totalPrice })
           .then(res => {
@@ -31,13 +29,12 @@ useEffect(() => {
               setClientSecret(res.data.clientSecret);
           })
   }
-}, [axiosSecure, totalPrice])
+ }, [axiosSecure, totalPrice])
 
 
   const handleSubmit = async (event) => {
     event.preventDefault();
   
-
   if (!stripe || !elements) {
     return
 }
@@ -81,12 +78,12 @@ else {
               console.log('transaction id', paymentIntent.id);
               setTransactionId(paymentIntent.id);
 
- // now save the payment in the database
+ // the payment  save in the database
  const payment = {
   email: user.email,
   price: totalPrice,
   transactionId: paymentIntent.id,
-  date: new Date(), // utc date convert. use moment js to 
+  date: new Date(), 
   cartIds: wishList.map(item => item._id),
   menuItemIds: wishList.map(item => item.menuId),
   status: 'pending'
@@ -103,9 +100,10 @@ if (res.data?.paymentResult?.insertedId) {
         showConfirmButton: false,
         timer: 1500
     });
-    navigate('/dashboard/paymentHistory')  }
+    navigate('/dashboard/paymentHistory')  
+  }
 
-          }}
+  }}
         
 
   }

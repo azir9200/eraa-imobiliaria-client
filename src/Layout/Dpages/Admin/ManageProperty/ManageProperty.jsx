@@ -3,6 +3,7 @@ import useHouses from "../../../../Components/Hocks/AllHouses";
 import { FaEdit, FaTrashAlt } from "react-icons/fa";
 import Swal from "sweetalert2";
 import { useState } from "react";
+import ManagePropertyDetails from "../ManagePropertyDetails/ManagePropertyDetails";
 
 const ManageProperty = () => {
 
@@ -54,8 +55,17 @@ console.log("_id",  _id)
 
   return (
     <div>
+
+<div className="grid grid-cols-1  lg:grid-cols-2 gap-4 " >
+       
+            {
+             allHouses.map(item=>  <ManagePropertyDetails key={item._id}  item={item}></ManagePropertyDetails> )
+            }
+        </div>
+
+{/*         
         <table className="table w-full">
-                        {/* head */}
+                       
                         <thead>
                             <tr>
                                 <th>
@@ -107,7 +117,9 @@ console.log("_id",  _id)
                         </tbody>
 
 
-                    </table>
+     </table> */}
+
+     
     </div>
   );
 };

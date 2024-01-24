@@ -2,12 +2,16 @@ import { FaAddressBook, FaEnvelope, FaFacebookMessenger, FaHome, FaRobot, FaShop
 import { NavLink, Outlet } from "react-router-dom";
 
 import useAdmin from "../../Components/Hocks/UseAdmin/UseAdmin";
+import useAgent from "../../Components/Hocks/useAgent/UseAgent";
 
 
 const DashBoard = () => {
 
   const [isAdmin] = useAdmin();
 console.log(isAdmin);
+
+const [isAgent] = useAgent();
+console.log(isAgent)
 
 
 
@@ -56,10 +60,12 @@ console.log(isAdmin);
               </>
           }
 
+          
+<div className="divider p-12" > </div>
 
-          <div className="divider p-12" > </div>
-          {/* agent  */}
-          <li><NavLink to="/dashBoard/agentProfile">
+          {
+            isAgent ? <>
+                         <li><NavLink to="/dashBoard/agentProfile">
             <FaRobot></FaRobot>
             Agent  Profile</NavLink> </li>
 
@@ -72,6 +78,30 @@ console.log(isAdmin);
 
           <li><NavLink to="/dashBoard/requestedProperty"> <FaAddressBook></FaAddressBook>
             Requested Properties</NavLink> </li>
+
+            </> :
+              <>
+              <li><NavLink to='/'><FaFacebookMessenger> </FaFacebookMessenger>  <FaEnvelope></FaEnvelope> Contacts </NavLink> </li>
+               
+              </>
+          }
+
+
+          
+          {/* agent  */}
+          {/* <li><NavLink to="/dashBoard/agentProfile">
+            <FaRobot></FaRobot>
+            Agent  Profile</NavLink> </li>
+
+     
+          <li><NavLink to="/dashBoard/myAddedProperty">
+            My Added Properties  </NavLink> </li>
+
+          <li><NavLink to="/dashBoard/soldProperty"> <FaAddressBook></FaAddressBook>
+            My Sold Properties</NavLink> </li>
+
+          <li><NavLink to="/dashBoard/requestedProperty"> <FaAddressBook></FaAddressBook>
+            Requested Properties</NavLink> </li> */}
 
           {/* regular */}
           <div className="divider p-12" > </div>

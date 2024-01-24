@@ -9,11 +9,12 @@ import PaymentForm from "../PaymentForm/PaymentForm";
 const Payment = () => {
   return (
     <div>
-           <div>
+           <div className="">
                 <Elements stripe={stripePromise}>
                     <PaymentForm></PaymentForm>
                 </Elements>
-            </div>
+
+           </div>
 
 
     </div>
