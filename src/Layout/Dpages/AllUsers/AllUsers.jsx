@@ -2,25 +2,12 @@ import { useQuery } from "@tanstack/react-query";
 import UseAxiosSecure from "../../../Components/Hocks/UseExiosecure/UseAxiosSecure";
 import { FaTrashAlt, FaUsers } from "react-icons/fa";
 import Swal from "sweetalert2";
-import { useEffect, useState } from "react";
-import useWishlist from "../../../Components/Hocks/useWishlist/useWishlist";
-import UseAxiosOpen from "../../../Components/UseAxiosOpen/UseAxiosOpen";
 
 
 const AllUsers = () => {
 
-// const [users, setUsers] = useState([])
-// useEffect(() => {
-//   fetch('https://eraa-imobiliria-server.vercel.app/users')
-//     .then(res => res.json())
-//     .then(data => setUsers(data))
-// }, [])
-
-
    const axiosSecure = UseAxiosSecure();
-  //  const [ refetch] = useWishlist();
 
-  //  const axiosSecure = UseAxiosOpen();
     const { data: users = [], refetch } = useQuery({
         queryKey: ['users'],
         queryFn: async () => {
@@ -28,7 +15,7 @@ const AllUsers = () => {
             return res.data;
         }
     })
-
+//  make Admin..
   const handleMakeAdmin = (user) => {
     axiosSecure.patch(`/users/admin/${user._id}`)
       .then(res => {
@@ -46,7 +33,7 @@ const AllUsers = () => {
       })
   } 
 
-
+//  delete an user
   const handleDeleteUser = users => {
     Swal.fire({
       title: "Are you sure?",

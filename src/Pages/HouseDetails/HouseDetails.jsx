@@ -4,11 +4,13 @@ import { AuthContext } from "../../Providers/AuthProviders";
 import Swal from "sweetalert2";
 import UseAxiosSecure from "../../Components/Hocks/UseExiosecure/UseAxiosSecure";
 import useWishlist from "../../Components/Hocks/useWishlist/useWishlist";
+import useHouses from "../../Components/Hocks/AllHouses";
 
 
 
 const HouseDetails = () => {
-  const houses = useLoaderData();
+   const allHouses = useLoaderData()
+  // const [ allHouses ] = useHouses();
 
   const { user } = useContext(AuthContext);
   const navigate = useNavigate();
@@ -16,8 +18,8 @@ const HouseDetails = () => {
   const axiosSecure = UseAxiosSecure()
   const [, refetch] = useWishlist();
 
-  const { _id, image, property_name, property_title, property_location, price_range, sq_ft, bedrooms, bathrooms, swimming_pool, agent_name, verification_status, description, agent_image } = houses;
-
+  const { _id, image, property_name, property_title, property_location, price_range, sq_ft, bedrooms, bathrooms, swimming_pool, agent_name, verification_status, description, agent_image } = allHouses;
+console.log(description)
   const handleAddtoWishlist = () => {
     if (user && user.email) {
 

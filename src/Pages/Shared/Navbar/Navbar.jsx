@@ -24,7 +24,7 @@ const Navbar = () => {
     
     <li>
       <Link to='/dashBoard/wishList'>
-         Dashboard+ {wishList.length}
+         Dashboard: {wishList.length}
       </Link>
     </li>
 

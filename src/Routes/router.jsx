@@ -24,6 +24,7 @@ import ErrorPage from "../Components/ErrorPage/ErrorPage";
 import ManageProperty from "../Layout/Dpages/Admin/ManageProperty/ManageProperty";
 import UpdateHouse from "../Layout/Dpages/Admin/UpdateHouse/UpdateHouse";
 import Payment from "../Pages/Dashboard/Payment/Payment";
+import AdminProfile from "../Layout/Dpages/Admin/AdminProfile/AdminProfile";
 
 
 
@@ -59,7 +60,7 @@ const router = createBrowserRouter([
       {
         path: '/houseDetails/:id',
         element: <HouseDetails></HouseDetails>,
-        loader: ({ params }) => fetch(`https://eraa-imobiliria-server.vercel.app/allHouse/${params.id}`)
+        loader: ({ params }) => fetch(`https://eraa-imobiliria-server.vercel.app/allHouses/${params.id}`)
       },
       {
         path: '/makeOffer',
@@ -114,9 +115,9 @@ const router = createBrowserRouter([
       },
       {
         path: 'adminProfile',
-        element: <WishList></WishList>
+        element: <AdminProfile></AdminProfile>
       },
-      // agent routes
+      // agent routes <li><NavLink to="/dashBoard/adminProfile">
       {
         path: 'agentProfile',
         element: <AgentProfile></AgentProfile>

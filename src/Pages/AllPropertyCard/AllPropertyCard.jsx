@@ -3,7 +3,7 @@ import { Link } from "react-router-dom";
 
 const AllPropertyCard = ({ houses }) => {
 
-  const { _id, image, property_location, price_range, verification_status } = houses;
+const { _id, image, property_location, price_range, verification_status } = houses;
 
   return (
     <div>

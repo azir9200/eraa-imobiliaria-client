@@ -26,6 +26,9 @@ console.log(isAgent)
                 <FaRobot></FaRobot>
                 Admin Profile</NavLink> </li>
 
+
+                <li><NavLink to='/dashBoard/wishList'>
+            My Wish List  </NavLink> </li>
              
               <li><NavLink to="/dashBoard/addProperty">  <FaShoppingCart></FaShoppingCart>
                 Add Property</NavLink> </li>
@@ -37,12 +40,10 @@ console.log(isAgent)
                 <FaRobot></FaRobot>
                 Manage Users </NavLink> </li>
 
-             
-
-
+            
             </> :
               <>
-                {/* normal dashboard */}
+                {/* normal  user dashboard */}
                 <li><NavLink to="/dashBoard/myProfile">
                   <FaRobot></FaRobot>
                  My Profile</NavLink> </li>
@@ -81,33 +82,21 @@ console.log(isAgent)
 
             </> :
               <>
+          <li><NavLink to="/dashBoard/agentProfile">
+            <FaRobot></FaRobot>
+            Agent  Profile</NavLink> </li>
+
+
               <li><NavLink to='/'><FaFacebookMessenger> </FaFacebookMessenger>  <FaEnvelope></FaEnvelope> Contacts </NavLink> </li>
                
               </>
           }
 
-
-          
-          {/* agent  */}
-          {/* <li><NavLink to="/dashBoard/agentProfile">
-            <FaRobot></FaRobot>
-            Agent  Profile</NavLink> </li>
-
-     
-          <li><NavLink to="/dashBoard/myAddedProperty">
-            My Added Properties  </NavLink> </li>
-
-          <li><NavLink to="/dashBoard/soldProperty"> <FaAddressBook></FaAddressBook>
-            My Sold Properties</NavLink> </li>
-
-          <li><NavLink to="/dashBoard/requestedProperty"> <FaAddressBook></FaAddressBook>
-            Requested Properties</NavLink> </li> */}
-
           {/* regular */}
           <div className="divider p-12" > </div>
 
           <li><NavLink to='/'><FaHome></FaHome> Home </NavLink> </li>
-          <li><NavLink to='/'><FaFacebookMessenger> </FaFacebookMessenger>  <FaEnvelope></FaEnvelope> Contacts </NavLink> </li>
+          
         </ul>
       </div>
       <div className="flex-1">

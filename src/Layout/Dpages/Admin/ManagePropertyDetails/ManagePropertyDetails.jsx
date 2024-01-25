@@ -7,7 +7,7 @@ import { useState } from "react";
 
 const ManagePropertyDetails = ({item}) => {
 
-  const [ refetch] = useHouses();
+   const [ refetch] = useHouses();
 
 const [remain, setRemain] = useState([])
 
@@ -27,7 +27,9 @@ const [remain, setRemain] = useState([])
           confirmButtonText: "Yes, delete it!"
       })
 
-      fetch(`http://localhost:5000/allHouses/${_id}`, {
+
+
+      fetch(`https://eraa-imobiliria-server.vercel.app/allHouses/${_id}`, {
         method: 'DELETE'
     })
     .then(res => res.json())
@@ -71,7 +73,7 @@ const [remain, setRemain] = useState([])
        <button  className="btn btn-ghost  bg-orange-300">  update  </button> </Link>
        <button onClick={() => handleDeleteItem(item._id)}
         className="btn btn-ghost border border-red-200">
-       <FaTrashAlt className="text-red-600"></FaTrashAlt>Delete </button>
+       <FaTrashAlt className="text-red-600"></FaTrashAlt>Delete</button>
     </div>
   </div>
 </div>

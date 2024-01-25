@@ -1,5 +1,6 @@
 import { useEffect, useState } from "react";
 import Review from "../Review/Review";
+import MyReview from "../../../../Layout/Dpages/NormalUsers/MyReview/MyReview";
 
 
 
@@ -21,6 +22,7 @@ const Reviews = () => {
       <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3  " >
         {
           reviews.map(review => <Review key={review.id} review={review} > </Review>
+          
           )
         }
 

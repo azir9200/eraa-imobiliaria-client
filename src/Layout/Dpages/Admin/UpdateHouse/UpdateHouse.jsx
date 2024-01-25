@@ -20,9 +20,7 @@ const UpdateHouse = () => {
         location: data.location,
         
       }
-      console.log(propertyInfo);
-
-      
+      console.log(propertyInfo);      
   
   //  fetch('https://eraa-imobiliria-server.vercel.app/allHouses', {
     fetch('http://localhost:5000/allHouses', {
@@ -102,7 +100,7 @@ const UpdateHouse = () => {
         </div>
 
         <div className="flex justify-center my-6 items-center" >
-          <button className="btn font-bold text-lg w-full ">  Add Properties </button>  </div>
+          <button className="btn font-bold text-lg w-full ">  Update Properties </button>  </div>
       </form>
     </div >
     </div>

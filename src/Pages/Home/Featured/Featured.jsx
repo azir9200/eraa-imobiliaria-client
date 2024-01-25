@@ -6,17 +6,11 @@ const Featured = () => {
   const [allhouses] = useHouses();
 
 
-  // const [allhouse, setHouses] = useState([]);
-  // useEffect(() => {
-  //   fetch('houses.json')
-  //     .then(res => res.json())
-  //     .then(data => setHouses(data))
-  // }, [])
   const houses = allhouses.slice(0, 4);
 
   return (
     <div>
-
+<h2 className="text-center text-xl font-semibold m-6">FIND YOUR BEST HOUSE HERE</h2>
       <div className="grid grid-cols-1  lg:grid-cols-2 gap-4 " >
 
         {
