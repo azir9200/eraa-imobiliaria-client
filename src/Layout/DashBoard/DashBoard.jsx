@@ -50,9 +50,9 @@ console.log(isAgent)
 
                 <li><NavLink to="/dashBoard/wishList"> <FaShoppingCart></FaShoppingCart>
                   My Wish List </NavLink> </li>
-
+ 
                 <li><NavLink to="/dashBoard/propertyBought">
-                  Property Bought </NavLink> </li>
+                  Property Bought   </NavLink> </li>
 
 
                 <li><NavLink to="/dashBoard/myReview">
@@ -65,7 +65,7 @@ console.log(isAgent)
 <div className="divider sm:p-2 md:px-12" > </div>
 
           {
-            isAgent ? <>
+            isAdmin ? <>
                          <li><NavLink to="/dashBoard/agentProfile">
             <FaRobot></FaRobot>
             Agent  Profile</NavLink> </li>
