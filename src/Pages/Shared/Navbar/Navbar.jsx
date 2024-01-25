@@ -39,7 +39,7 @@ const Navbar = () => {
   </>
 
   return (
-    <div className="navbar h-24  bg-emerald-200">
+    <div className="navbar h-24 z-10 fixed  bg-sky-200">
       <div className="navbar-start flex justify-end md:justify-start">
         <div className="dropdown ">
           <label tabIndex={0} className="btn btn-ghost lg:hidden">

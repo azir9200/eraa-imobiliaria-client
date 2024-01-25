@@ -8,12 +8,13 @@ const AdminProfile = () => {
 
   const { user } = useContext(AuthContext);
   return (
-    <div>
-      <div className="mx-auto text-center md:w-4/12 my-8">
+    <div className="mx-auto text-center">
+        <h2 className=" text-3xl italic m-6">Admin Details</h2>
+      <div className="mx-auto text-center  md:w-3/5 my-8">
           
-      <h2 className="underline text-2xl m-6">Admin Profile</h2>
-        <h2 className="text-emerald-400 text-4xl mb-2">User Name:   {user.displayName} </h2>
-        <p className="text-emerald-400  text-4xl mb-2"> User Email Address : {user.email} </p>
+    
+        <h2 className="text-sky-500 text-4xl mb-2">Admin Name:   {user.displayName} </h2>
+        <p className="text-sky-400  text-4xl mb-2">  Email : {user.email} </p>
      
        
       </div>

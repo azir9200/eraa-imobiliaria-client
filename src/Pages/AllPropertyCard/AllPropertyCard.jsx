@@ -10,7 +10,7 @@ const { _id, image, property_location, price_range, verification_status } = hous
       <div className="m-8" >
         <div className="  shadow-xl">
           <div className="relative overflow-hidden aspect-w-1 aspect-h-1 ">
-            <img src={image} alt="image" className="rounded object-cover sm:w-56 md:w-96 lg:w-full h-96 " />
+            <img src={image} alt="image" className="rounded object-cover sm:w-56 md:w-96 lg:w-full h-96 mt-4 " />
             <p className="absolute bottom-2 left-2 p-2 mr-2 bg-slate-500 text-xl rounded text-white">Price: {price_range}</p>
           </div>
 

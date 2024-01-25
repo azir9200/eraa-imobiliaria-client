@@ -18,7 +18,7 @@ console.log(isAgent)
   return (
 
     <div className="flex">
-      <div className="w-64 min-h-screen bg-emerald-300" >
+      <div className="sm:w-32 md:w-64 min-h-screen bg-emerald-300" >
         <ul className="menu p-6 " >
           {
             isAdmin ? <>
@@ -62,7 +62,7 @@ console.log(isAgent)
           }
 
           
-<div className="divider p-12" > </div>
+<div className="divider sm:p-2 md:px-12" > </div>
 
           {
             isAgent ? <>

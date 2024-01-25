@@ -117,7 +117,7 @@ const router = createBrowserRouter([
         path: 'adminProfile',
         element: <AdminProfile></AdminProfile>
       },
-      // agent routes <li><NavLink to="/dashBoard/adminProfile">
+      // agent routes
       {
         path: 'agentProfile',
         element: <AgentProfile></AgentProfile>
