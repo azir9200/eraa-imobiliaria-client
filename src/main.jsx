@@ -1,25 +1,30 @@
-import React from 'react'
-import ReactDOM from 'react-dom/client'
-import './index.css'
+import React from "react";
+import ReactDOM from "react-dom/client";
+import "./index.css";
 
+import { RouterProvider } from "react-router-dom";
+import router from "./Routes/router.jsx";
+import AuthProviders from "./Providers/AuthProviders.jsx";
+import { QueryClient, QueryClientProvider } from "@tanstack/react-query";
+import { persistor, store } from "./redux/store.js";
+import { Provider } from "react-redux";
+import { PersistGate } from "redux-persist/integration/react";
 
-import { RouterProvider, } from "react-router-dom";
-import router from './Routes/router.jsx';
-import AuthProviders from './Providers/AuthProviders.jsx';
+const queryClient = new QueryClient();
 
-import { QueryClient, QueryClientProvider, } from '@tanstack/react-query'
-
-const queryClient = new QueryClient()
-
-
-ReactDOM.createRoot(document.getElementById('root')).render(
-  <div className='max-w-7xl mx-auto' >
+ReactDOM.createRoot(document.getElementById("root")).render(
+  <div className="max-w-7xl mx-auto">
     <React.StrictMode>
-      <AuthProviders>
-        <QueryClientProvider client={queryClient}>
-          <RouterProvider router={router} />
-        </QueryClientProvider>
-      </AuthProviders>
-    </React.StrictMode>,
+      <Provider store={store}>
+        <PersistGate loading={null} persistor={persistor}>
+          <AuthProviders>
+            <QueryClientProvider client={queryClient}>
+              <RouterProvider router={router} />
+            </QueryClientProvider>
+          </AuthProviders>
+        </PersistGate>
+      </Provider>
+    </React.StrictMode>
+    ,
   </div>
-)
+);
