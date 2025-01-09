@@ -1,4 +1,4 @@
-import { createSlice, PayloadAction } from "@reduxjs/toolkit";
+import { createSlice } from "@reduxjs/toolkit";
 
 const initialState = {
   name: "",
@@ -13,26 +13,28 @@ const registerSlice = createSlice({
   name: "register",
   initialState,
   reducers: {
-    setName: (state, action: PayloadAction<string>) => {
+    setName: (state, action) => {
       state.name = action.payload;
     },
-    setEmail: (state, action: PayloadAction<string>) => {
+    setEmail: (state, action) => {
       state.email = action.payload;
     },
-    setPassword: (state, action: PayloadAction<string>) => {
+    setPassword: (state, action) => {
       state.password = action.payload;
     },
-    setRole: (state, action: PayloadAction<string>) => {
+    setRole: (state, action) => {
       state.role = action.payload;
     },
-    setAddress: (state, action: PayloadAction<string>) => {
+    setAddress: (state, action) => {
       state.address = action.payload;
     },
-    setCart: (state, action: PayloadAction<string>) => {
+    setCart: (state, action) => {
       state.cart = action.payload;
     },
   },
 });
+
 export const { setName, setEmail, setPassword, setRole, setAddress, setCart } =
   registerSlice.actions;
+
 export default registerSlice.reducer;

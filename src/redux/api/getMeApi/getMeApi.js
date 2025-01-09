@@ -5,7 +5,7 @@ const getMeApi = baseApi.injectEndpoints({
     // Fetch all products
     getMe: builder.query({
       query: () => ({
-        url: "api/auth/get-me",
+        url: "/users",
         method: "GET",
       }),
     }),

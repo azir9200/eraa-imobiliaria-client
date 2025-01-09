@@ -13,7 +13,7 @@ import { PersistGate } from "redux-persist/integration/react";
 const queryClient = new QueryClient();
 
 ReactDOM.createRoot(document.getElementById("root")).render(
-  <div className="max-w-7xl mx-auto">
+  <div className="w-full mx-auto">
     <React.StrictMode>
       <Provider store={store}>
         <PersistGate loading={null} persistor={persistor}>
@@ -25,6 +25,5 @@ ReactDOM.createRoot(document.getElementById("root")).render(
         </PersistGate>
       </Provider>
     </React.StrictMode>
-    ,
   </div>
 );

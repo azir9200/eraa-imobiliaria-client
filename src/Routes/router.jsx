@@ -26,11 +26,6 @@ import UpdateHouse from "../Layout/Dpages/Admin/UpdateHouse/UpdateHouse";
 import Payment from "../Pages/Dashboard/Payment/Payment";
 import AdminProfile from "../Layout/Dpages/Admin/AdminProfile/AdminProfile";
 
-
-
-
-
-
 const router = createBrowserRouter([
   {
     path: "/",
@@ -38,120 +33,136 @@ const router = createBrowserRouter([
     errorElement: <ErrorPage></ErrorPage>,
     children: [
       {
-        path: '/',
-        element: <Home></Home>
+        path: "/",
+        element: <Home></Home>,
       },
       {
-        path: '/allProperties',
-        element: <AllProperties></AllProperties>
+        path: "/allProperties",
+        element: <AllProperties></AllProperties>,
       },
       {
-        path: '/userLogin',
-        element: <UserLogin></UserLogin>
+        path: "/userLogin",
+        element: <UserLogin></UserLogin>,
       },
       {
-        path: '/userSignup',
-        element: <UserSignup></UserSignup>
+        path: "/userSignup",
+        element: <UserSignup></UserSignup>,
       },
       {
-        path: '/secret',
-        element: <PrivateRoute> <Secret></Secret></PrivateRoute>
+        path: "/secret",
+        element: (
+          <PrivateRoute>
+            {" "}
+            <Secret></Secret>
+          </PrivateRoute>
+        ),
       },
       {
-        path: '/houseDetails/:id',
+        path: "/houseDetails/:id",
         element: <HouseDetails></HouseDetails>,
-        loader: ({ params }) => fetch(`https://eraa-imobiliria-server.vercel.app/allHouses/${params.id}`)
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/allHouses/${params.id}`),
+        // loader: ({ params }) => fetch(`https://eraa-imobiliria-server.vercel.app/allHouses/${params.id}`)
       },
       {
-        path: '/makeOffer',
-        element: <MakeOffer></MakeOffer>
+        path: "/makeOffer",
+        element: <MakeOffer></MakeOffer>,
       },
       {
-        path: 'modalReview',
-        element: <ModalReview></ModalReview>
-      }
-    ]
+        path: "modalReview",
+        element: <ModalReview></ModalReview>,
+      },
+    ],
   },
   {
-    path: 'dashBoard',
-    element: <PrivateRoute><DashBoard></DashBoard></PrivateRoute>,
+    path: "dashBoard",
+    element: (
+      <PrivateRoute>
+        <DashBoard></DashBoard>
+      </PrivateRoute>
+    ),
     children: [
       //normal user route
       {
-        path: 'wishList',
-        element: <WishList></WishList>
+        path: "wishList",
+        element: <WishList></WishList>,
       },
       {
-        path: 'payment',
-        element: <Payment></Payment>
+        path: "payment",
+        element: <Payment></Payment>,
       },
       {
-        path: 'myProfile',
-        element: <MyProfile></MyProfile>
-      },
-      {
-        path: 'myProfile/:id',
+        path: "myProfile",
         element: <MyProfile></MyProfile>,
-        loader: ({ params }) => fetch(`https://eraa-imobiliria-server.vercel.app/users/${params.id}`)
+      },
+      {
+        path: "myProfile/:id",
+        element: <MyProfile></MyProfile>,
+        loader: ({ params }) =>
+          fetch(`http://localhost:5000/users/${params.id}`),
+        // fetch(`https://eraa-imobiliria-server.vercel.app/users/${params.id}`),
       },
 
       {
-        path: 'propertyBought',
-        element: <PropertyBought></PropertyBought>
+        path: "propertyBought",
+        element: <PropertyBought></PropertyBought>,
       },
       {
-        path: 'myReview',
-        element: <MyReview></MyReview>
+        path: "myReview",
+        element: <MyReview></MyReview>,
       },
       //todo : make admin root
       {
-        path: 'addProperty',
-        element: <AddProperty></AddProperty>
+        path: "addProperty",
+        element: <AddProperty></AddProperty>,
       },
       // todo make users admin route
       {
-        path: 'allUsers',
-        element: <AllUsers></AllUsers>
+        path: "allUsers",
+        element: <AllUsers></AllUsers>,
       },
       {
-        path: 'adminProfile',
-        element: <AdminProfile></AdminProfile>
+        path: "adminProfile",
+        element: <AdminProfile></AdminProfile>,
       },
       // agent routes
       {
-        path: 'agentProfile',
-        element: <AgentProfile></AgentProfile>
+        path: "agentProfile",
+        element: <AgentProfile></AgentProfile>,
       },
 
       // wrap with <Admin route>
       {
-        path: 'addProperty',
-        element: <AddProperty></AddProperty>
+        path: "addProperty",
+        element: <AddProperty></AddProperty>,
       },
       {
-         path: 'updateHouse/:id',
-       element: <UpdateHouse></UpdateHouse>,        
+        path: "updateHouse/:id",
+        element: <UpdateHouse></UpdateHouse>,
         //  loader: ({ params }) => fetch(`http://localhost:5000/allHouse/${params.id}`)
-        loader: ({ params }) => fetch(`https://eraa-imobiliria-server.vercel.app/allHouse/${params.id}`)
-        
+        loader: ({ params }) =>
+          fetch(
+            `http://localhost:5000/allHouse/${params.id}`
+            // `https://eraa-imobiliria-server.vercel.app/allHouse/${params.id}`
+          ),
       },
       {
-        path: 'manageProperty',
-        element: <ManageProperty></ManageProperty>
+        path: "manageProperty",
+        element: <ManageProperty></ManageProperty>,
       },
       {
-        path: 'myAddedProperty',
-        element: <MyAddedProperty></MyAddedProperty>
+        path: "myAddedProperty",
+        element: <MyAddedProperty></MyAddedProperty>,
       },
       {
-        path: 'soldProperty',
-        element: <MySoldProperty></MySoldProperty>
+        path: "soldProperty",
+        element: <MySoldProperty></MySoldProperty>,
       },
       {
-        path: 'requestedProperty',
-        element: <RequestedProperty></RequestedProperty>
-      }
-    ]
-  }
+        path: "requestedProperty",
+        element: <RequestedProperty></RequestedProperty>,
+      },
+    ],
+  },
 ]);
 export default router;
